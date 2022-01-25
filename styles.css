@@ -1,0 +1,265 @@
+html {
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #F0DB4F;
+  font-size: 16px; }
+
+.timeline {
+  display: flex;
+  width: 90%;
+  margin: 35px auto;
+  height: 11rem;
+  background-color: transparent;
+  position: relative; }
+  .timeline span {
+    display: inline-block; }
+  .timeline .segment-info-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 15px;
+    margin: auto;
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    border-radius: 5px; }
+    .timeline .segment-info-card.xgrid {
+      left: 11.5%;
+      background-color: deepskyblue; }
+    .timeline .segment-info-card.keeptruckin {
+      left: 62.5%;
+      background-color: deeppink; }
+    .timeline .segment-info-card .title {
+      font-weight: bold; }
+    .timeline .segment-info-card span:not(:first-child) {
+      margin-top: 10px; }
+  .timeline .segment {
+    display: flex;
+    align-items: center; }
+    .timeline .segment .month-dot {
+      height: 20px;
+      width: 20px;
+      border-radius: 10px; }
+      .timeline .segment .month-dot .date {
+        width: max-content;
+        margin-top: 30px;
+        margin-left: -19px;
+        font-weight: bold;
+        color: white; }
+    .timeline .segment .span-line {
+      height: 3px;
+      width: 100%; }
+    .timeline .segment.xgrid {
+      width: 38%; }
+      .timeline .segment.xgrid .month-dot, .timeline .segment.xgrid .span-line {
+        background-color: deepskyblue; }
+    .timeline .segment.keeptruckin {
+      width: 62%; }
+      .timeline .segment.keeptruckin .month-dot, .timeline .segment.keeptruckin .span-line {
+        background-color: deeppink; }
+
+.global-parent {
+  display: flex;
+  height: 100vh; }
+  .global-parent .navbar-container {
+    position: fixed;
+    width: 7%;
+    height: 100%;
+    min-width: 111px;
+    background-color: #161615;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .global-parent .navbar-container .nav-list ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      color: #F0DB4F; }
+      .global-parent .navbar-container .nav-list ul li {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 1rem;
+        border-bottom: 1px solid #484848; }
+        .global-parent .navbar-container .nav-list ul li a {
+          color: inherit;
+          text-decoration: inherit; }
+        .global-parent .navbar-container .nav-list ul li:hover {
+          background-color: #F0DB4F;
+          color: #323330; }
+        .global-parent .navbar-container .nav-list ul li:first-child {
+          border-top: 1px solid #484848; }
+  .global-parent .main-content-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #202020;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    overflow: scroll;
+    margin-left: 7%; }
+    .global-parent .main-content-container .headline {
+      animation: appear 3s forwards;
+      font-family: 'Alfa Slab One';
+      font-size: 5rem; }
+      .global-parent .main-content-container .headline span {
+        display: inline-block; }
+      .global-parent .main-content-container .headline .lost-letter {
+        animation: lostLetter 1s cubic-bezier(0.26, 1.3, 0.77, 1.03) forwards; }
+    .global-parent .main-content-container .about-me-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh; }
+      .global-parent .main-content-container .about-me-container .intro-para {
+        font-size: 1.3rem;
+        font-family: 'Roboto Mono', monospace; }
+      .global-parent .main-content-container .about-me-container .media-icons img {
+        cursor: pointer; }
+    .global-parent .main-content-container .skills-container {
+      min-height: 100vh; }
+      .global-parent .main-content-container .skills-container .skill-details {
+        display: flex; }
+        .global-parent .main-content-container .skills-container .skill-details .skill-listings {
+          flex: 50;
+          display: flex; }
+          .global-parent .main-content-container .skills-container .skill-details .skill-listings .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; }
+            .global-parent .main-content-container .skills-container .skill-details .skill-listings .list span {
+              display: inline-block;
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+              font-size: 1.2rem;
+              color: white; }
+            .global-parent .main-content-container .skills-container .skill-details .skill-listings .list span {
+              margin-left: 8rem; }
+          .global-parent .main-content-container .skills-container .skill-details .skill-listings h1 {
+            font-size: 1.9rem;
+            margin-left: 2rem;
+            margin-bottom: 1rem; }
+          .global-parent .main-content-container .skills-container .skill-details .skill-listings h3 {
+            margin-left: 5rem;
+            font-size: 1.5rem; }
+    .global-parent .main-content-container .tools-ratings-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .global-parent .main-content-container .tools-ratings-container .tools-layout {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem; }
+      .global-parent .main-content-container .tools-ratings-container .tools-logos {
+        flex: 50;
+        display: flex;
+        flex-direction: column; }
+        .global-parent .main-content-container .tools-ratings-container .tools-logos .logos {
+          flex: 50;
+          display: flex;
+          justify-content: space-evenly; }
+        .global-parent .main-content-container .tools-ratings-container .tools-logos .logo-container {
+          display: inline-flex;
+          flex-direction: column;
+          margin: 10px; }
+          .global-parent .main-content-container .tools-ratings-container .tools-logos .logo-container .label {
+            display: inline-block;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 1rem; }
+          .global-parent .main-content-container .tools-ratings-container .tools-logos .logo-container:not(:first-of-type) {
+            margin-left: 2rem; }
+          .global-parent .main-content-container .tools-ratings-container .tools-logos .logo-container img {
+            height: 75px;
+            width: auto; }
+            .global-parent .main-content-container .tools-ratings-container .tools-logos .logo-container img:hover {
+              animation: jump-shaking 0.83s; }
+      .global-parent .main-content-container .tools-ratings-container .tools-ratings {
+        flex: 50;
+        padding: 5%; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate .name {
+          font-weight: bold;
+          color: white; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate .progress-bar {
+          margin-top: 10px;
+          height: 2px;
+          width: 100%;
+          background-color: gray; }
+          .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate .progress-bar .progress {
+            background-color: #F0DB4F;
+            height: 100%; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.html .progress {
+          width: 75%;
+          background-color: #F16529; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.css .progress {
+          width: 70%;
+          background-color: #2965f1; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.bootstrap .progress {
+          width: 70%;
+          background-color: #8f4378; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.js .progress {
+          width: 65%; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.angular .progress {
+          width: 60%;
+          background-color: #B52E31; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.nodejs .progress {
+          width: 40%;
+          background-color: #68A063; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.sql .progress {
+          width: 40%; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.firebase .progress {
+          width: 45%;
+          background-color: #FFA611; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.mongodb .progress {
+          width: 45%;
+          background-color: #4DB33D; }
+        .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate:not(:first-child) {
+          margin-top: 2rem; }
+    .global-parent .main-content-container .experience-container {
+      min-height: 100vh; }
+
+@keyframes appear {
+  0% {
+    visibility: hidden; }
+  100% {
+    visibility: visible; } }
+
+@keyframes lostLetter {
+  0% {
+    transform: translate(2000px, 0); }
+  35% {
+    transform: translate(0, 0) rotate(0deg); }
+  83% {
+    transform: translate(0, 17px) rotate(57deg); }
+  87% {
+    transform: translate(0, -17px) rotate(57deg); }
+  100% {
+    transform: translate(-24px, 0) rotate(0deg); } }
+
+@keyframes gentleRotateY {
+  0% {
+    transform: rotateY(0deg); }
+  100% {
+    transform: rotateY(360deg); } }
+
+@keyframes jump-shaking {
+  0% {
+    transform: translateX(0); }
+  25% {
+    transform: translateY(-9px); }
+  35% {
+    transform: translateY(-9px) rotate(17deg); }
+  55% {
+    transform: translateY(-9px) rotate(-17deg); }
+  65% {
+    transform: translateY(-9px) rotate(17deg); }
+  75% {
+    transform: translateY(-9px) rotate(-17deg); }
+  100% {
+    transform: translateY(0) rotate(0); } }

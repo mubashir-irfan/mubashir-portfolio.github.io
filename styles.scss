@@ -1,0 +1,428 @@
+@import './colors.scss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: $minion-yellow;
+  font-size: 16px;
+}
+
+// #cursorTracker {
+//   position: absolute;
+//   top: -10%;
+//   left: -10%;
+//   height: 10px;
+//   width: 10px;
+//   border-radius: 50%;
+//   background-color: $minion-yellow;
+// }
+
+.timeline {
+  display: flex;
+  width: 90%;
+  margin: 35px auto;
+  height: 11rem;
+  background-color: transparent;
+  position: relative;
+
+  span { display: inline-block; }
+
+  .segment-info-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 15px;
+    margin: auto;
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+
+    &.xgrid {
+      left: 11.5%;
+      background-color: deepskyblue;
+    }
+
+    &.keeptruckin {
+      left: 62.5%;
+      background-color: deeppink;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    span:not(:first-child) { margin-top: 10px; }
+
+  }
+
+  .segment {
+    display: flex;
+    align-items: center;
+
+    .month-dot {
+      height: 20px;
+      width: 20px;
+      border-radius: 10px;
+
+      .date {
+        width: max-content;
+        margin-top: 30px;
+        margin-left: -19px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+
+    .span-line {
+      height: 3px;
+      width: 100%;
+    }
+
+    &.xgrid {
+      width: 38%;
+
+      .month-dot, .span-line {
+        background-color: deepskyblue;
+      }
+    }
+
+    &.keeptruckin {
+      width: 62%;
+
+      .month-dot, .span-line {
+        background-color: deeppink;
+      }
+    }
+  }
+}
+
+.global-parent {
+  display: flex;
+  height: 100vh;
+
+  .navbar-container {
+    position: fixed;
+    width: 7%;
+    height: 100%;
+    min-width: 111px;
+    background-color: #161615;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .nav-list {
+      ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        color: $minion-yellow;
+
+        li {
+          padding: 10px;
+          cursor: pointer;
+          font-size: 1rem;
+          border-bottom: 1px solid #484848;
+
+          a {
+            color: inherit;
+            text-decoration: inherit;
+          }
+
+          &:hover {
+            // background-color: #484848;
+            background-color: $minion-yellow;
+            color: $dark-charcoal;
+          }
+
+          &:first-child {
+            border-top: 1px solid #484848;
+          }
+        }
+      }
+    }
+  }
+
+  .main-content-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #202020;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    overflow: scroll;
+    margin-left: 7%;
+
+    .headline {
+      animation: appear 3s forwards;
+      font-family: 'Alfa Slab One';
+      font-size: 5rem;
+
+      span {
+        display: inline-block;
+      }
+
+      .lost-letter {
+        animation: lostLetter 1s cubic-bezier(.26,1.3,.77,1.03) forwards;
+      }
+    }
+
+    .about-me-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+
+      .intro-para {
+        font-size: 1.3rem;
+        font-family: 'Roboto Mono', monospace;
+      }
+
+      .media-icons {
+        img { cursor: pointer; }
+      }
+    }
+
+    .skills-container {
+      min-height: 100vh;
+
+      .skill-details {
+        display: flex;
+
+        .skill-listings {
+          flex: 50;
+          display: flex;
+
+          .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            span {
+              display: inline-block;
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+              font-size: 1.2rem;
+              color: white;
+            }
+
+            & span { margin-left: 8rem; }
+          }
+
+          h1 {
+            font-size: 1.9rem;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+          }
+
+          h3 {
+            margin-left: 5rem;
+            font-size: 1.5rem;
+          }
+        }
+
+      }
+
+    }
+
+    .tools-ratings-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .tools-layout {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+      }
+
+      .tools-logos {
+        flex: 50;
+
+        display: flex;
+        flex-direction: column;
+
+        .logos {
+          flex: 50;
+          display: flex;
+          justify-content: space-evenly;
+        }
+
+        .logo-container {
+          display: inline-flex;
+          flex-direction: column;
+          margin: 10px;
+
+          .label {
+            display: inline-block;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+          }
+
+          &:not(:first-of-type) {
+            margin-left: 2rem;
+          }
+
+          img {
+            height: 75px;
+            width: auto;
+
+            &:hover {
+              animation: jump-shaking 0.83s;
+            }
+          }
+        }
+      }
+
+      .tools-ratings {
+        flex: 50;
+        padding: 5%;
+
+        .tool-rate {
+          .name {
+            font-weight: bold;
+            color: white;
+          }
+
+          .progress-bar {
+            margin-top: 10px;
+            height: 2px;
+            width: 100%;
+            background-color: gray;
+
+            .progress {
+              background-color: $minion-yellow;
+              height: 100%;
+            }
+          }
+
+          &.html {
+            .progress {
+              width: 75%;
+              background-color: #F16529;
+            }
+          }
+
+          &.css {
+            .progress {
+              width: 70%;
+              background-color: #2965f1;
+            }
+          }
+
+          &.bootstrap {
+            .progress {
+              width: 70%;
+              background-color: #8f4378;
+            }
+          }
+
+          &.js {
+            .progress { width: 65%; }
+          }
+
+          &.angular {
+            .progress {
+              width: 60%;
+              background-color: #B52E31;
+             }
+          }
+
+
+          &.nodejs {
+            .progress {
+              width: 40%;
+              background-color: #68A063;
+            }
+          }
+
+          &.sql {
+            .progress {
+              width: 40%;
+            }
+          }
+
+          &.firebase {
+            .progress {
+              width: 45%;
+              background-color: #FFA611;
+            }
+          }
+
+          &.mongodb {
+            .progress {
+              width: 45%;
+              background-color: #4DB33D;
+            }
+          }
+
+          &:not(:first-child) {
+            margin-top: 2rem;
+          }
+
+        }
+      }
+    }
+
+    .experience-container {
+      min-height: 100vh;
+    }
+  }
+}
+
+@keyframes appear {
+  0% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+
+@keyframes lostLetter {
+  0% {
+    transform: translate(2000px,0);
+  }
+
+  35% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  83% {
+    transform: translate(0, 17px) rotate(57deg);
+  }
+
+  87% {
+    transform: translate(0, -17px) rotate(57deg);
+  }
+
+  100% {
+    transform: translate(-24px, 0) rotate(0deg);
+  }
+}
+
+@keyframes gentleRotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+
+@keyframes jump-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateY(-9px) }
+  35% { transform: translateY(-9px) rotate(17deg) }
+  55% { transform: translateY(-9px) rotate(-17deg) }
+  65% { transform: translateY(-9px) rotate(17deg) }
+  75% { transform: translateY(-9px) rotate(-17deg) }
+  100% { transform: translateY(0) rotate(0) }
+}
