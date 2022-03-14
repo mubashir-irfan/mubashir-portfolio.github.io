@@ -2,6 +2,7 @@
 
   <head>
     <title>Mubashir Irfan | Web Developer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +17,22 @@
     <div class="navbar-container">
       <div class="nav-list">
         <ul>
-          <li><a href="#home">About Me</a></li>
+          <li><a href="#home">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#tools">Tools</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact Me</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
+
     <div class="main-content-container">
 
       <div id="home" class="about-me-container">
         <div class="headline">
           <span>Hi, I'm Mubashir</span>
-          <div>A Web Develope <span class="lost-letter">r</span></div>
+          <div class="animated">A Web Develope <span class="lost-letter">r</span></div>
+          <div class="below-desktop">A web Developer</div>
         </div>
         <div class="intro-para">
           <p>Fullstack Developer | Frontend Focused</p>
@@ -38,6 +41,8 @@
         <div class="media-icons">
          <a href="https://github.com/mubashir-irfan/" target="_blank" ><img src="./assets/icons/icons8-github.svg"alt="Github"></a>
          <a href="https://www.linkedin.com/in/muhammad-mubashir-irfan/" target="_blank"><img src="./assets/icons/icons8-linkedin.svg" alt="Github"></a>
+         <a style="margin-left: 7px;" href="https://www.upwork.com/freelancers/~0130ded4b0a288246d" target="_blank"><img src="./assets/icons/icons8-upwork.svg" alt="Upwork"></a>
+         <a style="margin-left: 7px;" href="https://codepen.io/mubashir-irfan" target="_blank"><img src="./assets/icons/codepen-svgrepo-com.svg" alt="Upwork"></a>
         </div>
       </div>
 
@@ -81,7 +86,9 @@
 
               <div class="list">
                 <h3>3rd Party Integrations</h3>
-                <span>API Interaction</span>
+                <span>Mail Server Integration</span>
+                <span>Google Maps</span>
+                <span>API Integration</span>
               </div>
             </div>
           </div>
@@ -264,7 +271,69 @@
             <span class="month-dot"><span class="date">Present</span></span>
           </span>
         </div>
+        <div class="timeline-cards">
+          <div class="timeline-card xgrid">
+            <div class="heading">FiberMountain (via Xgrid)</div>
+            <div>June 2019 - June 2020</div>
+            <div class="role"><i>Frontend Developer</i></div>
+            <ul class="work-description">
+              <li>Mockup Implementation - <i><strong>HTML | CSS</strong></i> </li>
+              <li>Functionality Implementation - <i><strong>TypeScript | Angular 2+</strong></i></li>
+              <li>Application State Management - <i><strong>NgRx | Redux</strong></i></li>
+              <li>Feature Development</li>
+              <li>Reactive Programming | RxJS</li>
+              <li>Peer Code Reviews</li>
+              <li>Bug Fixing</li>
+            </ul>
+          </div>
+
+          <div class="timeline-card keeptruckin">
+            <div class="heading">KeepTruckin</div>
+            <div>July 2020 - Present</div>
+            <div class="role"><i>Frontend Developer</i></div>
+            <ul class="work-description">
+              <li>Mockup Implementation - <i><strong>HTML | CSS</strong></i> </li>
+              <li>Functionality Implementation - <i><strong>TypeScript | Angular 2+</strong></i></li>
+              <li>Feature Development</li>
+              <li>Reactive Programming | <i><strong>RxJS</strong></i></li>
+              <li>Mentorship</li>
+              <li>Peer Code Reviews</li>
+              <li>Bug Fixing</li>
+              <li>Documentation</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <div id="contact" class="contact-me-container">
+        <div class="headline"><span>Contact Me</span></div>
+        <div class="contact-form-wrapper">
+          <form target="_blank" action="https://formsubmit.io/send/f2b1447a-c287-4752-a136-70f02956f6a" method="POST">
+            <!-- <input name="_redirect" type="hidden" id="name" value="https://your website url"> -->
+            <div class="group-row">
+              <input type="text" name="name" placeholder="Full Name" required>
+              <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <textarea class="message" placeholder="Your Message" name="message" rows="10" required></textarea>
+            <input name="_formsubmit_id" type="text" style="display:none">
+            <button type="submit" class="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <footer>
+        <div class="year">&#169; 2022 - Muhammad Mubashir</div>
+        <div id="mobileYear">&#169; 2022 - Mubashir</div>
+        <div class="contact-details">
+          <address>
+            <a href="mailto:mubashir.irfan37@gmail.com">mubashir.irfan37@gmail.com</a><br>
+            <a href="tel:+923345155315">+923345155315</a>
+          </address>
+        </div>
+        <div class="secondary">Built from Scratch</div>
+      </footer>
     </div>
   </body>
 
@@ -277,4 +346,19 @@
   //   tracker.style.top = event.clientY+13+'px';
   //   tracker.style.left = event.clientX+3+'px';
   // }
+
+  let anchorlinks = document.querySelectorAll('a[href^="#"]')
+
+for (let item of anchorlinks) { // relitere
+  item.addEventListener('click', (e)=> {
+    let hashval = item.getAttribute('href')
+    let target = document.querySelector(hashval)
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+    history.pushState(null, null, hashval)
+    e.preventDefault()
+  })
+}
 </script>
