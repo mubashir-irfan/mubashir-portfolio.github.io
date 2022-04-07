@@ -382,7 +382,10 @@ body {
           }
 
           &.js {
-            .progress { width: 65%; }
+            .progress {
+              width: 65%;
+              background-color: $minion-yellow;
+            }
           }
 
           &.angular {

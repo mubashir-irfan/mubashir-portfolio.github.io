@@ -242,7 +242,8 @@ body {
           width: 70%;
           background-color: #8f4378; }
         .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.js .progress {
-          width: 65%; }
+          width: 65%;
+          background-color: #F0DB4F; }
         .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.angular .progress {
           width: 60%;
           background-color: #B52E31; }
