@@ -4,7 +4,7 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  color: #F0DB4F;
+  color: #1FC5E2;
   font-size: 16px; }
 
 .timeline {
@@ -112,7 +112,7 @@ body {
       list-style: none;
       padding: 0;
       text-align: center;
-      color: #F0DB4F; }
+      color: #1FC5E2; }
       .global-parent .navbar-container .nav-list ul li {
         cursor: pointer;
         font-size: 1rem;
@@ -123,8 +123,8 @@ body {
           color: inherit;
           text-decoration: inherit; }
         .global-parent .navbar-container .nav-list ul li:hover {
-          background-color: #F0DB4F;
-          color: #323330; }
+          background-color: #1FC5E2;
+          color: white; }
         .global-parent .navbar-container .nav-list ul li:first-child {
           border-top: 1px solid #484848; }
   .global-parent .main-content-container {
@@ -230,7 +230,7 @@ body {
           width: 100%;
           background-color: gray; }
           .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate .progress-bar .progress {
-            background-color: #F0DB4F;
+            background-color: #1FC5E2;
             height: 100%; }
         .global-parent .main-content-container .tools-ratings-container .tools-ratings .tool-rate.html .progress {
           width: 75%;
@@ -273,13 +273,14 @@ body {
           padding: 30px; }
         .global-parent .main-content-container .contact-me-container .contact-form-wrapper input, .global-parent .main-content-container .contact-me-container .contact-form-wrapper textarea {
           background-color: #323330;
-          border: 1px solid #F0DB4F;
+          border: 1px solid #1FC5E2;
           color: white;
           border-radius: 10px;
           padding: 10px;
           width: 100%;
-          font-size: 1.4rem;
-          font-family: sans-serif; }
+          font-size: 16px;
+          font-family: sans-serif;
+          box-shadow: 0 0 10px 5px #1FC5E2; }
         .global-parent .main-content-container .contact-me-container .contact-form-wrapper input {
           height: 50px; }
         .global-parent .main-content-container .contact-me-container .contact-form-wrapper .group-row {
@@ -287,21 +288,23 @@ body {
           .global-parent .main-content-container .contact-me-container .contact-form-wrapper .group-row input:not(:first-of-type) {
             margin-left: 1rem; }
         .global-parent .main-content-container .contact-me-container .contact-form-wrapper .message {
-          margin-top: 1rem; }
+          margin-top: 50px; }
         .global-parent .main-content-container .contact-me-container .contact-form-wrapper button.submit {
           height: 45px;
           width: 175px;
           border-radius: 9px;
-          background-color: #F0DB4F;
-          color: #323330;
-          margin: 25px auto;
-          font-size: 1.3rem; }
+          background-color: white;
+          color: #1FC5E2;
+          margin: 75px auto;
+          font-size: 16px;
+          box-shadow: 0 0 10px 5px #1FC5E2;
+          border: none; }
     .global-parent .main-content-container .below-desktop {
       display: none; }
   .global-parent .footer {
     height: 35px;
     z-index: 1;
-    background-color: #F0DB4F;
+    background-color: #1FC5E2;
     color: #323330; }
     .global-parent .footer footer {
       height: 100%;
@@ -375,7 +378,7 @@ body {
     align-items: center;
     top: 7%;
     right: 7%;
-    border: 1px solid #F0DB4F;
+    border: 1px solid #1FC5E2;
     border-radius: 5px; }
   .mobile-nav {
     display: unset;
@@ -383,7 +386,7 @@ body {
     width: 100vw;
     top: 3%;
     left: 0%;
-    border-bottom: 1px solid #F0DB4F; }
+    border-bottom: 1px solid #1FC5E2; }
     .mobile-nav .nav-list {
       background-color: #282C34; }
     .mobile-nav ul {
@@ -395,9 +398,9 @@ body {
       .mobile-nav ul li {
         padding: 0 21px; }
         .mobile-nav ul li:not(:first-child) {
-          border-left: 1px solid #F0DB4F; }
+          border-left: 1px solid #1FC5E2; }
         .mobile-nav ul li a {
-          color: #F0DB4F;
+          color: #1FC5E2;
           text-decoration: none; }
   .global-parent {
     flex-direction: column;
@@ -431,7 +434,7 @@ body {
             .global-parent .navbar-container .nav-list ul li:first-child {
               border: none; }
             .global-parent .navbar-container .nav-list ul li:not(:first-child) {
-              border-left: 1px solid #F0DB4F; }
+              border-left: 1px solid #1FC5E2; }
             .global-parent .navbar-container .nav-list ul li a {
               padding: 5px 10px; }
     .global-parent .main-content-container {
@@ -444,7 +447,7 @@ body {
       .global-parent .main-content-container > div {
         min-height: min-content !important;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #F0DB4F;
+        border-bottom: 1px solid #1FC5E2;
         width: 90vw; }
       .global-parent .main-content-container .headline {
         font-size: 1.3rem;

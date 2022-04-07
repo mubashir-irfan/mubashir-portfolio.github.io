@@ -7,7 +7,7 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  color: $minion-yellow;
+  color:$secondary;
   font-size: 16px;
 }
 
@@ -18,7 +18,7 @@ body {
 //   height: 10px;
 //   width: 10px;
 //   border-radius: 50%;
-//   background-color: $minion-yellow;
+//   background-color:$secondary;
 // }
 
 .timeline {
@@ -170,7 +170,7 @@ body {
         list-style: none;
         padding: 0;
         text-align: center;
-        color: $minion-yellow;
+        color:$secondary;
 
         li {
           cursor: pointer;
@@ -186,8 +186,8 @@ body {
 
           &:hover {
             // background-color: #484848;
-            background-color: $minion-yellow;
-            color: $dark-charcoal;
+            background-color:$secondary;
+            color: white;
           }
 
           &:first-child {
@@ -355,7 +355,7 @@ body {
             background-color: gray;
 
             .progress {
-              background-color: $minion-yellow;
+              background-color:$secondary;
               height: 100%;
             }
           }
@@ -447,14 +447,15 @@ body {
         }
 
         input, textarea {
-          background-color: $dark-charcoal;
-          border: 1px solid $minion-yellow;
+          background-color: $primary;
+          border: 1px solid$secondary;
           color: white;
           border-radius: 10px;
           padding: 10px;
           width: 100%;
-          font-size: 1.4rem;
+          font-size: 16px;
           font-family: sans-serif;
+          box-shadow: 0 0 10px 5px $secondary;
         }
 
         input {  height: 50px; }
@@ -465,16 +466,18 @@ body {
           input:not(:first-of-type) { margin-left: 1rem;}
         }
 
-        .message { margin-top: 1rem; }
+        .message { margin-top: 50px; }
 
         button.submit {
           height: 45px;
           width: 175px;
           border-radius: 9px;
-          background-color: $minion-yellow;
-          color: $dark-charcoal;
-          margin: 25px auto;
-          font-size: 1.3rem;
+          background-color: white;
+          color: $secondary;
+          margin: 75px auto;
+          font-size: 16px;
+          box-shadow: 0 0 10px 5px $secondary;
+          border: none;
         }
       }
     }
@@ -485,8 +488,8 @@ body {
   .footer {
     height: 35px;
     z-index: 1;
-    background-color: $minion-yellow;
-    color: $dark-charcoal;
+    background-color:$secondary;
+    color: $primary;
 
     footer {
       height: 100%;
@@ -496,7 +499,7 @@ body {
 
       & > div {
         padding: 0 15px;
-        &:not(:first-child) { border-left: 1px solid $dark-charcoal; }
+        &:not(:first-child) { border-left: 1px solid $primary; }
       }
       .contact-details {
         address {
@@ -504,7 +507,7 @@ body {
           display: flex;
 
           a {
-            color: $dark-charcoal;
+            color: $primary;
             text-decoration: none;
             font-style: normal;
 
@@ -579,7 +582,7 @@ body {
     align-items: center;
     top: 7%;
     right: 7%;
-    border: 1px solid $minion-yellow;
+    border: 1px solid$secondary;
     border-radius: 5px;
   }
 
@@ -589,7 +592,7 @@ body {
     width: 100vw;
     top: 3%;
     left: 0%;
-    border-bottom: 1px solid $minion-yellow;
+    border-bottom: 1px solid$secondary;
 
     .nav-list { background-color: $black-100; }
 
@@ -603,10 +606,10 @@ body {
       li {
         padding: 0 21px;
         &:not(:first-child) {
-          border-left: 1px solid $minion-yellow;
+          border-left: 1px solid$secondary;
         }
 
-        a { color: $minion-yellow;
+        a { color:$secondary;
           text-decoration: none;
         }
       }
@@ -640,7 +643,7 @@ body {
           // &:not(:first-child) {
           //   margin-left: 0 !important;
           //   padding-left: 7px;
-          //   border-left: 1px solid $dark-charcoal;
+          //   border-left: 1px solid $primary;
           // }
 
           &:first-child { margin-left: 0; }
@@ -663,7 +666,7 @@ body {
           li {
             border: none;
             &:first-child { border: none; }
-            &:not(:first-child) { border-left: 1px solid $minion-yellow; }
+            &:not(:first-child) { border-left: 1px solid$secondary; }
 
             a { padding: 5px 10px; }
           }
@@ -682,7 +685,7 @@ body {
       & > div {
         min-height: min-content !important;
         padding-bottom: 1rem;
-        border-bottom: 1px solid $minion-yellow;
+        border-bottom: 1px solid$secondary;
         width: 90vw;
       }
 
@@ -714,7 +717,7 @@ body {
 
         .skill-domain {
           padding: 1.35rem 0;
-          // border-bottom: 1px solid $minion-yellow;
+          // border-bottom: 1px solid$secondary;
 
           .list {
             h3 {
