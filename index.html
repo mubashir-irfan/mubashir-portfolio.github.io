@@ -1,364 +1,162 @@
 <html lang="en">
-
   <head>
-    <title>Mubashir Irfan | Web Developer</title>
-    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet" crossorigin="">
+    <title>Mubashir Irfan | Frontend Developer Developer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!--- Raleway font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--- Open Sans font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 100;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
-  <!-- <div id="cursorTracker"></div> -->
-  <div class="global-parent">
-    <div class="navbar-container">
-      <div class="nav-list">
-        <ul>
-          <li><a href="#home">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#tools">Tools</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <div
+      class="global-parent px-8 bg-slate-900 text-white h-screen w-screen flex items-center overflow-y-auto"
+    >
+      <div
+        class="content-parent w-full mx-auto lg:max-w-[90%] h-full flex flex-col"
+      >
+        <!-- Navigation Links -->
+        <ul
+          class="hidden md:flex justify-around space-x-16 mx-auto p-4 py-3 border-b-[2px] border-slate-500 md:w-[30%] text-base font-light rounded-b-2xl text-sm"
+        >
+          <li>
+            <a href="#">Brief</a>
+          </li>
+          <li>
+            <a href="#">Expertise</a>
+          </li>
+          <li>
+            <a href="#">Work History</a>
+          </li>
         </ul>
+
+        <!--- TLDR; content container -->
+        <section class="flex-grow">
+          <div class="p-2 md:p-8 flex flex-col gap-4 h-full">
+            <section class="h-fit w-full text-center mt-4">
+              <p class="text-base">Hi, my name is</p>
+              <p>
+                <span class="text-[3.3rem] font-semibold">Mubashir Irfan</span>
+              </p>
+              <p class="text-base">and I am a</p>
+              <p class="text-[2rem] font-semibold">
+                a Senior Frontend Engineer
+              </p>
+              <p class="text-[1.2rem]">based in Abu Dhabi, UAE.</p>
+              <div
+                class="text-[1.2rem] flex flex-col gap-3 mt-12 max-w-[80%] mx-auto text-left"
+              >
+                <p>
+                  I convert ideas and designs into human-centric applications
+                  and code, and I have been doing so for the last 5 years. I
+                  have extensive experience building Modern Web Applications &
+                  Experiences, Responsive Layouts, Human-Centric UIs and
+                  Developer-centric Codebases using NextJS, React, Tailwind,
+                  Angular 2+. I also hold hands-on experience developing modern
+                  backend stacks powered by JS.
+                </p>
+                <p>
+                  I am also the writer behind the code blog of
+
+                  <a
+                    href="https://unused-css.com/blog/"
+                    class="text-cyan-400 text-[1.3rem]"
+                    rel="noopener"
+                    target="_blank"
+                    >UnUsedCSS</a
+                  >
+                  - a CSS minifer based out of London.
+                </p>
+              </div>
+              <div class="flex gap-4 items-center my-4 w-fit mx-auto">
+                <a
+                  title="Mubashir's Linkedin Profile"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/muhammad-mubashir-irfan/"
+                  rel="noopener"
+                >
+                  <svg
+                    class="w-12 h-12 text-sky-600 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    width="48px"
+                    height="48px"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+                    />
+                    <path
+                      fill="#0F172A"
+                      d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  title="Mubashir's Upwork Profile"
+                  target="_blank"
+                  href="https://www.upwork.com/freelancers/~0130ded4b0a288246d"
+                  rel="noopener"
+                >
+                <svg
+                  class="w-12 h-12 text-sky-600 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 50"
+                  width="45px"
+                  height="45px"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M 1 9 C 0.448 9 0 9.448 0 10 L 0 24.115234 C 0 30.276234 4.6829844 35.631469 10.833984 35.980469 C 16.730984 36.314469 21.747875 32.176391 22.796875 26.650391 C 23.366875 27.420391 23.94625 28.135969 24.53125 28.792969 L 21.001953 43.771484 C 20.932953 44.069484 21.002406 44.380094 21.191406 44.621094 C 21.382406 44.859094 21.670563 45 21.976562 45 L 27.095703 45 C 27.559703 45 27.959406 44.687328 28.066406 44.236328 C 28.687406 41.615328 29.660969 37.508156 30.542969 33.785156 L 31.453125 34.3125 C 33.618125 35.4335 35.815 36 38 36 C 45.192 36 50.926 29.641 49.875 22.25 C 49.179 17.354 45.414078 13.318344 40.580078 12.277344 C 34.951078 11.064344 29.525359 13.949141 27.193359 18.744141 C 27.193359 18.744141 26.934562 19.318578 26.726562 19.892578 C 25.076563 17.046578 24.107609 14.094078 23.599609 11.955078 C 23.414609 11.175078 23.137469 9.762875 23.105469 9.671875 C 22.966469 9.268875 22.589109 9 22.162109 9 L 17 9 C 16.448 9 16 9.448 16 10 L 16 24.300781 C 16 26.649781 14.287219 28.750516 11.949219 28.978516 C 9.2672187 29.240516 7 27.13 7 24.5 L 7 10 C 7 9.448 6.552 9 6 9 L 1 9 z M 38 19 C 40.757 19 43 21.243 43 24 C 43 26.757 40.757 29 38 29 C 35.775 29 33.713531 27.658281 32.269531 26.488281 C 32.796531 24.263281 33.15025 22.773047 33.15625 22.748047 C 33.72425 20.541047 35.717 19 38 19 z"
+                  />
+                </svg>
+                </a>
+
+                <svg
+                  class="w-12 h-12 text-sky-600 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  width="48px"
+                  height="48px"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"
+                  />
+                </svg>
+
+              </div>
+            </section>
+          </div>
+        </section>
       </div>
-    </div>
-
-    <div class="main-content-container">
-
-      <div id="home" class="about-me-container">
-        <div class="headline">
-          <span>Hi, I'm Mubashir</span>
-          <div class="animated">A Web Develope <span class="lost-letter">r</span></div>
-          <div class="below-desktop">A web Developer</div>
-        </div>
-        <div class="intro-para">
-          <p>Fullstack Developer | Frontend Focused</p>
-          <p>3 Years of Experience</p>
-        </div>
-        <div class="media-icons">
-         <a href="https://github.com/mubashir-irfan/" target="_blank" ><img src="./assets/icons/icons8-github.svg"alt="Github"></a>
-         <a href="https://www.linkedin.com/in/muhammad-mubashir-irfan/" target="_blank"><img src="./assets/icons/icons8-linkedin.svg" alt="Github"></a>
-         <a style="margin-left: 7px;" href="https://www.upwork.com/freelancers/~0130ded4b0a288246d" target="_blank"><img src="./assets/icons/icons8-upwork.svg" alt="Upwork"></a>
-         <a style="margin-left: 7px;" href="https://codepen.io/mubashir-irfan" target="_blank"><img src="./assets/icons/codepen-svgrepo-com.svg" alt="Upwork"></a>
-        </div>
-      </div>
-
-      <div id="skills" class="skills-container">
-        <div class="headline"><span>My Skill Set</span></div>
-        <div class="skill-details">
-          <div class="skill-listings">
-            <div class="skill-domain">
-              <h1>Frontend</h1>
-              <div class="list">
-                <h3>Design ~ HTML | CSS</h3>
-                <span>Converting Designs to Functional Screens</span>
-                <span>Responsive Web Design</span>
-                <span>Fixing Design Bugs and Inconsistencies</span>
-              </div>
-
-              <div class="list">
-                <h3>Functionality ~ JavaScript</h3>
-                <span>Implementing Page Functionality</span>
-                <span>Interacting with Backend(s)</span>
-                <span>Optimizing Existing Code ( Performance, Readability, Maintainability)</span>
-              </div>
-            </div>
-
-            <div class="skill-domain">
-              <h1>Backend</h1>
-              <div class="list">
-                <h3>Server</h3>
-                <span>Architectural Design</span>
-                <span>API Development</span>
-                <span>AuthN and AuthZ</span>
-                <span>Object-Document-Mapping / Objection-Relation-Mapping</span>
-              </div>
-
-              <div class="list">
-                <h3>Databases</h3>
-                <span>Design and Implementation</span>
-                <span>SQL Based Functionality</span>
-                <span>NoSQL Based Functionality</span>
-              </div>
-
-              <div class="list">
-                <h3>3rd Party Integrations</h3>
-                <span>Mail Server Integration</span>
-                <span>Google Maps</span>
-                <span>API Integration</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tools" class="tools-ratings-container">
-        <div class="headline"><span>Technologies</span></div>
-        <div class="tools-layout">
-          <div style="display: none;" class="tools-logos">
-            <div class="logos">
-              <div class="logo-container">
-                <img src="./assets/icons/html.svg" alt="HTML">
-                <span class="label">HTML</span>
-              </div>
-              <div class="logo-container">
-                <img src="./assets/icons/css.svg" alt="CSS">
-                <span class="label">CSS</span>
-              </div>
-              <div class="logo-container">
-                <img src="./assets/icons/javascript.svg" alt="JavaScript">
-                <span class="label">JavaScript</span>
-              </div>
-            </div>
-            <div class="logos">
-              <div class="logo-container">
-                <img src="./assets/icons/angular.svg" alt="Angular 2+">
-                <span class="label">Angular 2+</span>
-              </div>
-
-              <div class="logo-container">
-                <img src="./assets/icons/ant-design.svg" alt="Ant Design">
-                <span class="label">Ant Design</span>
-              </div>
-
-              <div class="logo-container">
-                <img src="./assets/icons/bootstrap.svg" alt="Bootstrap">
-                <span class="label">Bootstrap</span>
-              </div>
-            </div>
-
-            <div class="logos">
-              <div class="logo-container">
-                <img src="./assets/icons/node.svg" alt="Node JS">
-                <span class="label">Node</span>
-              </div>
-
-              <div class="logo-container">
-                <img src="./assets/icons/firebase.svg" alt="Firebase">
-                <span class="label">Firebase</span>
-              </div>
-
-              <div class="logo-container">
-                <img src="./assets/icons/mongodb.svg" alt="Mongo DB">
-                <span class="label">MongoDB</span>
-              </div>
-            </div>
-
-            <div class="logos">
-              <div class="logo-container">
-                <img src="./assets/icons/sql.svg" alt="SQL Server">
-                <span class="label">SQL</span>
-              </div>
-
-              <div class="logo-container">
-                <img src="./assets/icons/docker.svg" alt="Docker">
-                <span class="label">Docker</span>
-              </div>
-
-              <div class="logo-container">
-                <img src="./assets/icons/git.svg" alt="Git">
-                <span class="label">Git</span>
-              </div>
-            </div>
-          </div>
-          <div class="tools-ratings">
-            <div class="tool-rate html">
-              <div class="name">
-                HTML
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate css">
-              <div class="name">
-                CSS
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate bootstrap">
-              <div class="name">
-                Bootstrap
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate js">
-              <div class="name">
-                JavaScript
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate angular">
-              <div class="name">
-                Angular
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate backend nodejs">
-              <div class="name">
-                NodeJS
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate backend sql">
-              <div class="name">
-                SQL
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate backend firebase">
-              <div class="name">
-                Firebase
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-            <div class="tool-rate backend mongodb">
-              <div class="name">
-                MongoDB
-              </div>
-              <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div id="experience" class="experience-container">
-        <div class="headline"><span>Experience</span></div>
-        <div class="timeline">
-          <div class="segment-info-card xgrid">
-            <span class="title">Frontend Developer</span>
-            <span class="company">Xgrid | FiberMountain</span>
-          </div>
-          <div class="segment-info-card keeptruckin">
-            <span class="title">Frontend Developer</span>
-            <span class="company">KeepTruckin</span>
-          </div>
-          <span class="segment xgrid">
-            <span class="month-dot"><span class="date">July 2019</span></span>
-            <span class="span-line"></span>
-          </span>
-          <span class="segment keeptruckin">
-            <span class="month-dot"><span class="date">July 2020</span></span>
-            <span class="span-line"></span>
-            <span class="month-dot"><span class="date">Present</span></span>
-          </span>
-        </div>
-        <div class="timeline-cards">
-          <div class="timeline-card xgrid">
-            <div class="heading">FiberMountain (via Xgrid)</div>
-            <div>June 2019 - June 2020</div>
-            <div class="role"><i>Frontend Developer</i></div>
-            <ul class="work-description">
-              <li>Mockup Implementation - <i><strong>HTML | CSS</strong></i> </li>
-              <li>Functionality Implementation - <i><strong>TypeScript | Angular 2+</strong></i></li>
-              <li>Application State Management - <i><strong>NgRx | Redux</strong></i></li>
-              <li>Feature Development</li>
-              <li>Reactive Programming | RxJS</li>
-              <li>Peer Code Reviews</li>
-              <li>Bug Fixing</li>
-            </ul>
-          </div>
-
-          <div class="timeline-card keeptruckin">
-            <div class="heading">KeepTruckin</div>
-            <div>July 2020 - Present</div>
-            <div class="role"><i>Frontend Developer</i></div>
-            <ul class="work-description">
-              <li>Mockup Implementation - <i><strong>HTML | CSS</strong></i> </li>
-              <li>Functionality Implementation - <i><strong>TypeScript | Angular 2+</strong></i></li>
-              <li>Feature Development</li>
-              <li>Reactive Programming | <i><strong>RxJS</strong></i></li>
-              <li>Mentorship</li>
-              <li>Peer Code Reviews</li>
-              <li>Bug Fixing</li>
-              <li>Documentation</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div id="contact" class="contact-me-container">
-        <div class="headline"><span>Contact Me</span></div>
-        <div class="contact-form-wrapper">
-          <form target="_blank" action="https://formsubmit.co/mubashir.irfan37@gmail.com" method="POST">
-            <!-- <input name="_redirect" type="hidden" id="name" value="https://your website url"> -->
-            <div class="group-row">
-              <input type="text" name="name" placeholder="Full Name" required>
-              <input type="email" name="email" placeholder="Email Address" required>
-            </div>
-            <textarea class="message" placeholder="Your Message" name="message" rows="10" required></textarea>
-            <input name="_formsubmit_id" type="text" style="display:none">
-            <button type="submit" class="submit">Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <footer>
-        <div class="year">&#169; 2022 - Muhammad Mubashir</div>
-        <div id="mobileYear">&#169; 2022 - Mubashir</div>
-        <div class="contact-details">
-          <address>
-            <a href="mailto:mubashir.irfan37@gmail.com">mubashir.irfan37@gmail.com</a><br>
-            <a href="tel:+923345155315">+923345155315</a>
-          </address>
-        </div>
-        <div class="secondary">Built from Scratch</div>
-      </footer>
     </div>
   </body>
-
 </html>
-<script>
-
-  // window.onmousemove = moveCursorTracker;
-  // const tracker = document.getElementById('cursorTracker');
-  // function moveCursorTracker(event) {
-  //   tracker.style.top = event.clientY+13+'px';
-  //   tracker.style.left = event.clientX+3+'px';
-  // }
-
-  let anchorlinks = document.querySelectorAll('a[href^="#"]')
-
-for (let item of anchorlinks) { // relitere
-  item.addEventListener('click', (e)=> {
-    let hashval = item.getAttribute('href')
-    let target = document.querySelector(hashval)
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-    history.pushState(null, null, hashval)
-    e.preventDefault()
-  })
-}
-</script>
