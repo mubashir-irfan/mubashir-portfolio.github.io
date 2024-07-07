@@ -27,7 +27,7 @@
 
     <style>
       * {
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-weight: 100;
       }
     </style>
@@ -36,65 +36,46 @@
 
   <body>
     <div
-      class="global-parent px-8 bg-slate-900 text-white h-screen w-screen flex items-center overflow-y-auto"
+      class="global-parent px-8 bg-gradient-to-br from-slate-900 to-black text-white h-screen w-screen flex items-center overflow-y-auto"
     >
       <div
         class="content-parent w-full mx-auto lg:max-w-[90%] h-full flex flex-col"
       >
         <!-- Navigation Links -->
         <ul
-          class="hidden md:flex justify-around space-x-16 mx-auto p-4 py-3 border-b-[2px] border-slate-500 md:w-[30%] text-base font-light rounded-b-2xl text-sm"
+          class="absolute left-0 top-1/2 -translate-y-1/2 lg:flex lg:flex-col lg:gap-12 py-[5rem] rounded-xl justify-around ml-auto p-4 py-3 border-r border-sky-600 text-base"
         >
-          <li>
+          <li class="hover:text-sky-600">
             <a href="#">Brief</a>
           </li>
-          <li>
-            <a href="#">Expertise</a>
+          <li class="hover:text-sky-600">
+            <a href="#">Experience</a>
           </li>
-          <li>
-            <a href="#">Work History</a>
+          <li class="hover:text-sky-600">
+            <a href="#">In-Depth</a>
+          </li>
+          <li class="hover:text-sky-600">
+            <a href="#">Get in Touch</a>
           </li>
         </ul>
 
         <!--- TLDR; content container -->
         <section class="flex-grow">
-          <div class="p-2 md:p-8 flex flex-col gap-4 h-full">
-            <section class="h-fit w-full text-center mt-4">
-              <p class="text-base">Hi, my name is</p>
+          <div
+            class="p-8 md:p-8 flex flex-col gap-4 h-full max-w-[80%] mx-auto"
+          >
+            <section class="h-fit w-full text-left mt-16">
+              <p class="text-[1.2rem]">Hi, my name is</p>
               <p>
                 <span class="text-[3.3rem] font-semibold">Mubashir Irfan</span>
               </p>
-              <p class="text-base">and I am a</p>
-              <p class="text-[2rem] font-semibold">
-                a Senior Frontend Engineer
+              <p class="text-[1.4rem]">
+                and I am a
+                <span class="font-semibold">Senior Frontend Engineer</span>
+                based in Abu Dhabi, UAE.
               </p>
-              <p class="text-[1.2rem]">based in Abu Dhabi, UAE.</p>
-              <div
-                class="text-[1.2rem] flex flex-col gap-3 mt-12 max-w-[80%] mx-auto text-left"
-              >
-                <p>
-                  I convert ideas and designs into human-centric applications
-                  and code, and I have been doing so for the last 5 years. I
-                  have extensive experience building Modern Web Applications &
-                  Experiences, Responsive Layouts, Human-Centric UIs and
-                  Developer-centric Codebases using NextJS, React, Tailwind,
-                  Angular 2+. I also hold hands-on experience developing modern
-                  backend stacks powered by JS.
-                </p>
-                <p>
-                  I am also the writer behind the code blog of
 
-                  <a
-                    href="https://unused-css.com/blog/"
-                    class="text-cyan-400 text-[1.3rem]"
-                    rel="noopener"
-                    target="_blank"
-                    >UnUsedCSS</a
-                  >
-                  - a CSS minifer based out of London.
-                </p>
-              </div>
-              <div class="flex gap-4 items-center my-4 w-fit mx-auto">
+              <div class="flex gap-4 my-8 w-fit">
                 <a
                   title="Mubashir's Linkedin Profile"
                   target="_blank"
@@ -102,7 +83,7 @@
                   rel="noopener"
                 >
                   <svg
-                    class="w-12 h-12 text-sky-600 fill-current"
+                    class="w-12 h-12 text-white hover:text-sky-500 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 48 48"
                     width="48px"
@@ -125,34 +106,92 @@
                   href="https://www.upwork.com/freelancers/~0130ded4b0a288246d"
                   rel="noopener"
                 >
-                <svg
-                  class="w-12 h-12 text-sky-600 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 50 50"
-                  width="45px"
-                  height="45px"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M 1 9 C 0.448 9 0 9.448 0 10 L 0 24.115234 C 0 30.276234 4.6829844 35.631469 10.833984 35.980469 C 16.730984 36.314469 21.747875 32.176391 22.796875 26.650391 C 23.366875 27.420391 23.94625 28.135969 24.53125 28.792969 L 21.001953 43.771484 C 20.932953 44.069484 21.002406 44.380094 21.191406 44.621094 C 21.382406 44.859094 21.670563 45 21.976562 45 L 27.095703 45 C 27.559703 45 27.959406 44.687328 28.066406 44.236328 C 28.687406 41.615328 29.660969 37.508156 30.542969 33.785156 L 31.453125 34.3125 C 33.618125 35.4335 35.815 36 38 36 C 45.192 36 50.926 29.641 49.875 22.25 C 49.179 17.354 45.414078 13.318344 40.580078 12.277344 C 34.951078 11.064344 29.525359 13.949141 27.193359 18.744141 C 27.193359 18.744141 26.934562 19.318578 26.726562 19.892578 C 25.076563 17.046578 24.107609 14.094078 23.599609 11.955078 C 23.414609 11.175078 23.137469 9.762875 23.105469 9.671875 C 22.966469 9.268875 22.589109 9 22.162109 9 L 17 9 C 16.448 9 16 9.448 16 10 L 16 24.300781 C 16 26.649781 14.287219 28.750516 11.949219 28.978516 C 9.2672187 29.240516 7 27.13 7 24.5 L 7 10 C 7 9.448 6.552 9 6 9 L 1 9 z M 38 19 C 40.757 19 43 21.243 43 24 C 43 26.757 40.757 29 38 29 C 35.775 29 33.713531 27.658281 32.269531 26.488281 C 32.796531 24.263281 33.15025 22.773047 33.15625 22.748047 C 33.72425 20.541047 35.717 19 38 19 z"
-                  />
-                </svg>
+                  <svg
+                    class="w-12 h-12 text-white hover:text-sky-500 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 50 50"
+                    width="45px"
+                    height="45px"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M 1 9 C 0.448 9 0 9.448 0 10 L 0 24.115234 C 0 30.276234 4.6829844 35.631469 10.833984 35.980469 C 16.730984 36.314469 21.747875 32.176391 22.796875 26.650391 C 23.366875 27.420391 23.94625 28.135969 24.53125 28.792969 L 21.001953 43.771484 C 20.932953 44.069484 21.002406 44.380094 21.191406 44.621094 C 21.382406 44.859094 21.670563 45 21.976562 45 L 27.095703 45 C 27.559703 45 27.959406 44.687328 28.066406 44.236328 C 28.687406 41.615328 29.660969 37.508156 30.542969 33.785156 L 31.453125 34.3125 C 33.618125 35.4335 35.815 36 38 36 C 45.192 36 50.926 29.641 49.875 22.25 C 49.179 17.354 45.414078 13.318344 40.580078 12.277344 C 34.951078 11.064344 29.525359 13.949141 27.193359 18.744141 C 27.193359 18.744141 26.934562 19.318578 26.726562 19.892578 C 25.076563 17.046578 24.107609 14.094078 23.599609 11.955078 C 23.414609 11.175078 23.137469 9.762875 23.105469 9.671875 C 22.966469 9.268875 22.589109 9 22.162109 9 L 17 9 C 16.448 9 16 9.448 16 10 L 16 24.300781 C 16 26.649781 14.287219 28.750516 11.949219 28.978516 C 9.2672187 29.240516 7 27.13 7 24.5 L 7 10 C 7 9.448 6.552 9 6 9 L 1 9 z M 38 19 C 40.757 19 43 21.243 43 24 C 43 26.757 40.757 29 38 29 C 35.775 29 33.713531 27.658281 32.269531 26.488281 C 32.796531 24.263281 33.15025 22.773047 33.15625 22.748047 C 33.72425 20.541047 35.717 19 38 19 z"
+                    />
+                  </svg>
                 </a>
-
-                <svg
-                  class="w-12 h-12 text-sky-600 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 64 64"
-                  width="48px"
-                  height="48px"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"
-                  />
-                </svg>
-
               </div>
+
+              <div class="flex justify-center items-center">
+                <button
+                  class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg text-[1.1rem] hover:bg-sky-700"
+                >
+                  Download My Resume
+                </button>
+              </div>
+
+              <div
+                class="text-[1.2rem] flex flex-col gap-3 mt-6 mx-auto text-left"
+              >
+                <p class="leading-8">
+                  I convert ideas and designs into human-centric web
+                  applications and developer-centric code - and I have been
+                  doing so for the last
+                  <span class="font-semibold text-sky-600 text-[1.2rem]"
+                    >5 years</span
+                  >. I have extensive experience building Modern Web
+                  Applications & Experiences, Responsive Layouts, Human-Centric
+                  UIs and Developer-centric Codebases using NextJS, React,
+                  Tailwind, Angular 2+. I also hold hands-on experience
+                  developing modern backend stacks powered by Javascript.
+                </p>
+                <p class="text-center my-4">
+                  I am also the writer behind the code
+                  <a
+                    href="https://unused-css.com/blog/"
+                    class="text-sky-600 underline"
+                    rel="noopener"
+                    target="_blank"
+                    >blog
+                  </a>
+                  &nbsp;of
+                  <span class="font-semibold">UnUsedCSS</span>
+                  - a CSS minifIer based out of London.
+                </p>
+              </div>
+            </section>
+
+            <section class="flex flex-col gap-8">
+              <p class="text-[1.1rem]">
+                I write HTML, CSS and JavaScript with
+                <span class="font-semibold">NextJS</span>,
+                <span class="font-semibold">React</span> and
+                <span class="font-semibold">Angular 2+</span> to build
+                business-critical web applications. I also hold hands-on
+                knowledge of building NodeJS-powered backends.
+              </p>
+
+              <p>
+                If you have an idea to discuss, a web platform to evolve or
+                anything that I can contribute to - let's
+                <a
+                  href="/"
+                  class="text-sky-600 underline"
+                  rel="noopener"
+                  target="_blank"
+                  >connect</a
+                >.
+              </p>
+
+              <p>
+                You can learn about my profile in depth
+                <a
+                  href="/"
+                  class="text-sky-600 underline"
+                  rel="noopener"
+                  target="_blank"
+                  >here</a
+                >.
+              </p>
             </section>
           </div>
         </section>
