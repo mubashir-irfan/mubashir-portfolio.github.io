@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" class="!scroll-smooth">
   <head>
     <title>Mubashir Irfan | Frontend Developer Developer</title>
     <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png" />
@@ -30,6 +30,9 @@
         font-family: 'Open Sans', sans-serif;
         font-weight: 100;
       }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -46,7 +49,7 @@
           <a href="#brief">Brief</a>
         </li>
         <li class="hover:text-sky-600">
-          <a href="#experience">Experience</a>
+          <a href="#experience" class="scroll-smooth">Experience</a>
         </li>
         <li class="hover:text-sky-600">
           <a href="#">In-Depth</a>
@@ -55,149 +58,275 @@
           <a href="#">Get in Touch</a>
         </li>
       </ul>
+
       <div
-        id="home"
-        class="content-parent w-full mx-auto lg:max-w-[90%] h-full flex flex-col"
+        id="brief"
+        class="content-parent w-full mx-auto lg:max-w-[90%] min-h-screen flex flex-col"
       >
-        <!--- TLDR; content container -->
-        <section class="flex-grow">
-          <div
-            class="p-8 md:p-8 flex flex-col gap-4 h-full max-w-[80%] mx-auto"
-          >
-            <section class="h-fit w-full text-left mt-16">
-              <p class="text-[1.2rem]">Hi, my name is</p>
-              <p>
-                <span class="text-[3.3rem] font-semibold">Mubashir Irfan</span>
-              </p>
-              <p class="text-[1.4rem]">
-                and I am a
-                <span class="font-semibold">Senior Frontend Engineer</span>
-                based in Abu Dhabi, UAE.
-              </p>
+        <!--- Landing Page-->
+        <div class="p-8 md:p-8 flex flex-col gap-4 max-w-[80%] mx-auto my-auto">
+          <section class="h-fit w-full text-left mt-16">
+            <p class="text-[1.1rem]">Hi, my name is</p>
+            <p>
+              <span class="text-[2.75rem] font-semibold">Mubashir Irfan</span>
+            </p>
+            <p class="text-[1.2rem]">
+              and I am a
+              <span class="font-semibold">Senior Frontend Engineer</span>
+              based in Abu Dhabi, UAE.
+            </p>
 
-              <div class="flex gap-4 my-8 w-fit">
-                <a
-                  title="Mubashir's Linkedin Profile"
-                  target="_blank"
-                  href="https://www.linkedin.com/in/muhammad-mubashir-irfan/"
-                  rel="noopener"
-                >
-                  <svg
-                    class="w-12 h-12 text-white hover:text-sky-500 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 48 48"
-                    width="48px"
-                    height="48px"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
-                    />
-                    <path
-                      fill="#0F172A"
-                      d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
-                    />
-                  </svg>
-                </a>
-
-                <a
-                  title="Mubashir's Upwork Profile"
-                  target="_blank"
-                  href="https://www.upwork.com/freelancers/~0130ded4b0a288246d"
-                  rel="noopener"
-                >
-                  <svg
-                    class="w-12 h-12 text-white hover:text-sky-500 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 50 50"
-                    width="45px"
-                    height="45px"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M 1 9 C 0.448 9 0 9.448 0 10 L 0 24.115234 C 0 30.276234 4.6829844 35.631469 10.833984 35.980469 C 16.730984 36.314469 21.747875 32.176391 22.796875 26.650391 C 23.366875 27.420391 23.94625 28.135969 24.53125 28.792969 L 21.001953 43.771484 C 20.932953 44.069484 21.002406 44.380094 21.191406 44.621094 C 21.382406 44.859094 21.670563 45 21.976562 45 L 27.095703 45 C 27.559703 45 27.959406 44.687328 28.066406 44.236328 C 28.687406 41.615328 29.660969 37.508156 30.542969 33.785156 L 31.453125 34.3125 C 33.618125 35.4335 35.815 36 38 36 C 45.192 36 50.926 29.641 49.875 22.25 C 49.179 17.354 45.414078 13.318344 40.580078 12.277344 C 34.951078 11.064344 29.525359 13.949141 27.193359 18.744141 C 27.193359 18.744141 26.934562 19.318578 26.726562 19.892578 C 25.076563 17.046578 24.107609 14.094078 23.599609 11.955078 C 23.414609 11.175078 23.137469 9.762875 23.105469 9.671875 C 22.966469 9.268875 22.589109 9 22.162109 9 L 17 9 C 16.448 9 16 9.448 16 10 L 16 24.300781 C 16 26.649781 14.287219 28.750516 11.949219 28.978516 C 9.2672187 29.240516 7 27.13 7 24.5 L 7 10 C 7 9.448 6.552 9 6 9 L 1 9 z M 38 19 C 40.757 19 43 21.243 43 24 C 43 26.757 40.757 29 38 29 C 35.775 29 33.713531 27.658281 32.269531 26.488281 C 32.796531 24.263281 33.15025 22.773047 33.15625 22.748047 C 33.72425 20.541047 35.717 19 38 19 z"
-                    />
-                  </svg>
-                </a>
-              </div>
-
-              <div class="flex justify-center items-center">
-                <button
-                  class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg text-[1.1rem] hover:bg-sky-700"
-                >
-                  Download My Resume
-                </button>
-              </div>
-
-              <div
-                class="text-[1.2rem] flex flex-col gap-3 mt-6 mx-auto text-left"
+            <div class="flex gap-4 my-8 w-fit">
+              <a
+                title="Mubashir's Linkedin Profile"
+                target="_blank"
+                href="https://www.linkedin.com/in/muhammad-mubashir-irfan/"
+                rel="noopener"
               >
-                <p class="leading-8">
-                  I convert ideas and designs into human-centric web
-                  applications and developer-centric code - and I have been
-                  doing so for the last
-                  <span class="font-semibold text-sky-600 text-[1.2rem]"
-                    >5 years</span
-                  >. I have extensive experience building Modern Web
-                  Applications & Experiences, Responsive Layouts, Human-Centric
-                  UIs and Developer-centric Codebases using NextJS, React,
-                  Tailwind, Angular 2+. I also hold hands-on experience
-                  developing modern backend stacks powered by Javascript.
-                </p>
-                <p class="text-center my-4">
-                  I am also the writer behind the code
-                  <a
-                    href="https://unused-css.com/blog/"
-                    class="text-sky-600 underline"
-                    rel="noopener"
-                    target="_blank"
-                    >blog
-                  </a>
-                  &nbsp;of
-                  <span class="font-semibold">UnUsedCSS</span>
-                  - a CSS minifIer based out of London.
-                </p>
-              </div>
-            </section>
+                <svg
+                  class="w-12 h-12 text-white hover:text-sky-500 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 48 48"
+                  width="48px"
+                  height="48px"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+                  />
+                  <path
+                    fill="#0F172A"
+                    d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
+                  />
+                </svg>
+              </a>
 
-            <section class="flex flex-col gap-8 text-[1.2rem] leading-8">
-              <p class="text-[1.1rem]">
-                I write HTML, CSS and JavaScript with
-                <span class="font-semibold">NextJS</span>,
-                <span class="font-semibold">React</span> and
-                <span class="font-semibold">Angular 2+</span> to build
-                business-critical web applications. I also hold hands-on
-                knowledge of building NodeJS-powered backends.
-              </p>
+              <a
+                title="Mubashir's Upwork Profile"
+                target="_blank"
+                href="https://www.upwork.com/freelancers/~0130ded4b0a288246d"
+                rel="noopener"
+              >
+                <svg
+                  class="w-12 h-12 text-white hover:text-sky-500 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 50"
+                  width="45px"
+                  height="45px"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M 1 9 C 0.448 9 0 9.448 0 10 L 0 24.115234 C 0 30.276234 4.6829844 35.631469 10.833984 35.980469 C 16.730984 36.314469 21.747875 32.176391 22.796875 26.650391 C 23.366875 27.420391 23.94625 28.135969 24.53125 28.792969 L 21.001953 43.771484 C 20.932953 44.069484 21.002406 44.380094 21.191406 44.621094 C 21.382406 44.859094 21.670563 45 21.976562 45 L 27.095703 45 C 27.559703 45 27.959406 44.687328 28.066406 44.236328 C 28.687406 41.615328 29.660969 37.508156 30.542969 33.785156 L 31.453125 34.3125 C 33.618125 35.4335 35.815 36 38 36 C 45.192 36 50.926 29.641 49.875 22.25 C 49.179 17.354 45.414078 13.318344 40.580078 12.277344 C 34.951078 11.064344 29.525359 13.949141 27.193359 18.744141 C 27.193359 18.744141 26.934562 19.318578 26.726562 19.892578 C 25.076563 17.046578 24.107609 14.094078 23.599609 11.955078 C 23.414609 11.175078 23.137469 9.762875 23.105469 9.671875 C 22.966469 9.268875 22.589109 9 22.162109 9 L 17 9 C 16.448 9 16 9.448 16 10 L 16 24.300781 C 16 26.649781 14.287219 28.750516 11.949219 28.978516 C 9.2672187 29.240516 7 27.13 7 24.5 L 7 10 C 7 9.448 6.552 9 6 9 L 1 9 z M 38 19 C 40.757 19 43 21.243 43 24 C 43 26.757 40.757 29 38 29 C 35.775 29 33.713531 27.658281 32.269531 26.488281 C 32.796531 24.263281 33.15025 22.773047 33.15625 22.748047 C 33.72425 20.541047 35.717 19 38 19 z"
+                  />
+                </svg>
+              </a>
+            </div>
 
+            <div class="flex justify-center items-center">
+              <button
+                class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg text-[1.1rem] hover:bg-sky-700"
+              >
+                Download My Resume
+              </button>
+            </div>
+
+            <div class="flex flex-col gap-3 mt-6 mx-auto text-justify">
               <p>
-                If you have an idea to discuss, a web platform to evolve or
-                anything that I can contribute to - let's
+                I convert ideas and designs into human-centric web applications
+                and developer-centric code - and I have been doing so for the
+                last
+                <span class="font-semibold text-sky-600 text-[1.1rem]"
+                  >5 years</span
+                >. I have extensive experience building Modern Web Applications
+                & Experiences, Responsive Layouts, Human-Centric UIs and
+                Developer-centric Codebases using NextJS, React, Tailwind,
+                Angular 2+. I also hold hands-on knowledge and experience of
+                building NodeJS-powered backends. I am also the writer behind
+                the code
                 <a
-                  href="/"
+                  href="https://unused-css.com/blog/"
                   class="text-sky-600 underline"
                   rel="noopener"
                   target="_blank"
-                  >connect</a
-                >.
+                  >blog
+                </a>
+                &nbsp;of
+                <span class="font-semibold">UnUsedCSS</span>
+                - a CSS minifIer based out of London.
               </p>
+            </div>
+          </section>
 
-              <p>
-                You can learn about my profile in depth
-                <a
-                  href="/"
-                  class="text-sky-600 underline"
-                  rel="noopener"
-                  target="_blank"
-                  >here</a
-                >.
-              </p>
-            </section>
-          </div>
-        </section>
+          <section class="flex flex-col gap-8">
+            <p>
+              If you have an idea to discuss, a web platform to evolve or
+              anything that I can contribute to - let's
+              <a
+                href="/"
+                class="text-sky-600 underline font-bold"
+                rel="noopener"
+                target="_blank"
+                >connect</a
+              >.
+            </p>
+          </section>
+        </div>
       </div>
 
-      <div id="experience"></div>
+      <div
+        id="experience"
+        class="min-h-screen w-full lg:max-w-[90%] flex justify-center items-center"
+      >
+        <div
+          class="m-4 p-4 flex flex-col gap-12 overflow-y-scroll max-w-[80%] px-4 mx-auto bg-slate-900 backdrop-blur h-[90%] rounded-md"
+        >
+          <section class="flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <h2 class="text-2xl font-bold">
+                Senior Frontend Engineer at
+                <a
+                  href="https://www.linkedin.com/company/locai"
+                  class="text-sky-600 italic font-bold"
+                  target="_blank"
+                  rel="noopener"
+                  >LocAI</a
+                >
+              </h2>
+              <p>April 2024 - Present | Abu Dhabi, UAE</p>
+            </div>
+            <div class="flex gap-4">
+              <div>
+                <p>Responsible for:</p>
+                <ul class="ml-4">
+                  <li>Developing Iqraa Dashboard with NextJS</li>
+                  <li>Implementing UI with Headless UI and TailwindCSS</li>
+                  <li>
+                    Implementing UI functionality with Typescript and React
+                  </li>
+                  <li>Integrating APIs using React Query</li>
+                  <li>Writing custom Authentication and Authorization</li>
+                  <li>Implementing State Management with Redux</li>
+                  <li>
+                    Implementing Analytics Pipeline with Rudderstack and
+                    Mixpanel
+                  </li>
+                  <li>Light and Dark Mode themes development</li>
+                  <li>Internationalization - Supporting Arabic Language</li>
+                  <li>English and Arabic Email Templates</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="text-justify flex flex-col gap-3">
+              <p>
+                At LocAI, I am serving as a Senior Software Engineer (Frontend).
+                My core responsiblity includes developing, maintaining and
+                evolving the
+                <a
+                  href="https://www.iqraa.ai/"
+                  class="text-sky-600 font-bold"
+                  target="_blank"
+                  rel="noopener"
+                  >Iqra'a</a
+                >
+                - an EdTech solution for UAE that leverages AI to automate,
+                enhance and evolve Educational System in UAE.
+              </p>
+              <p>
+                My role involves collaborating cross-functionally with Product,
+                Design, Backend and QA Teams to realize the product roadmap. I
+                joined the codebase in its birth month and was assigned the core
+                responsibilites of laying and strengthening the ground work. I
+                got to write custom authentication of the codebase, which is
+                responsibile for authentication and authorization of the user
+                session. I developed the engagement tracking pipeline using
+                custom events sent to Rudderstack, which then reverse-ETLs them
+                to Mixpanel and Google Analytics. I designed and developed the
+                architecture of communicating with Backend via React Query by
+                writing custom hooks that encapsulate repetitive operations of
+                triggering, managing state of and responding to the errors
+                generated by API invocations.
+              </p>
+              <p>
+                As the application evolved, we implemented Internationalization
+                to ensure native UAE users could use the application in Arabic.
+                I conducted the effort of centralising the application's source
+                of strings based on user's choice of language, and coordinated
+                with Translation team to extract, translate and re-inject the
+                large set of strings in an efficient manner. I also implemented
+                a light-dark mode theme switcher, to further enhance the UX.
+              </p>
+            </div>
+          </section>
+
+          <section class="flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <h2 class="text-2xl font-bold">
+                Senior Frontend Engineer at
+                <a
+                  href="https://www.careem.com/"
+                  class="text-sky-600 italic font-bold"
+                  target="_blank"
+                  rel="noopener"
+                  >Careem</a
+                >
+              </h2>
+              <p>August 2023 - April 2024 | Islamabad, Pakistan</p>
+            </div>
+            <div class="flex gap-4">
+              <div>
+                <ul class="ml-4">
+                  <li>
+                    Developed Careem Bikes Admin Dashboard with NextJS and
+                    TypeScript
+                  </li>
+                  <li>Implemented UI styles with TailwindCSS</li>
+                  <li>Wrote unit tests in Jest to ensure use case coverage</li>
+                  <li>Wrote API Integration Layer with React-Query</li>
+                  <li>Implemented State Management with Context</li>
+                  <li>
+                    Implemented Observability and Monitoring with Grafana and
+                    Prometheus/PromQL
+                  </li>
+                  <li>
+                    Developed commercial email templates for launch of Careem
+                    Bikes in Saudi Arabia
+                  </li>
+                  <li>
+                    Conducted technical interviews for hiring Frontend Engineers
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="text-justify flex flex-col gap-3">
+              <p>
+                I was hired at Careem to develop the Careem Bikes Dashboard
+                in-house. I, aided by my amazing colleague Yahya from Jordan,
+                developed the dashboard using NextJS and TailwindCSS.
+              </p>
+              <p>
+                During my time, we launched Careem Bikes in Saudi Arabia. I was
+                repsonsible for the development of commercial and operations
+                email templates in Arabic. This opportunity enabled me to dive
+                deep into Right-to-Left Language email templates, and their
+                challenges.
+              </p>
+              <p>
+                Careem web services must follow standard internal practices of
+                thorough Monitoring and Observability. The responsiblity of
+                implementing this lies with the Development team. This provided
+                me with an opportunity to implement the monitoring and
+                corresponding alerts using Grafana and Prometheus.
+              </p>
+              <p>
+                Another dimension of my duties was to conduct hiring interviews
+                for potential additions to the Engineering team.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
   </body>
 </html>
