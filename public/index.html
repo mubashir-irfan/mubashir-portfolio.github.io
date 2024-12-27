@@ -29,6 +29,9 @@
       * {
         font-family: 'Open Sans', sans-serif;
         font-weight: 100;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
       html {
         scroll-behavior: smooth;
@@ -39,7 +42,7 @@
 
   <body>
     <div
-      class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-gradient-to-br from-slate-900 to-black text-white lg:text-lg text-base overflow-y-hidden"
+      class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-gradient-to-br from-slate-900 to-black text-white text-sm md:text-base lg:text-lg overflow-y-hidden"
     >
       <!-- Navigation Links -->
       <ul
@@ -63,7 +66,7 @@
       </ul>
 
       <ul
-        class="flex lg:hidden min-w-[80%] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-2 border-sky-600 text-base rounded-xl backdrop-blur"
+        class="text-sm flex lg:hidden min-w-[80%] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-2 border-sky-600 text-base rounded-xl backdrop-blur"
       >
         <li class="hover:text-sky-600">
           <a href="#brief">Brief</a>
@@ -87,14 +90,14 @@
         class="content-parent w-full lg:ml-auto md:max-w-[90%] min-h-screen flex flex-col"
       >
         <!--- Landing Page-->
-        <div class="p-8 md:p-8 flex flex-col gap-4 max-w-[90%] mx-auto my-auto">
+        <div class="p-2 md:p-8 flex flex-col gap-4 max-w-[90%] mx-auto my-auto">
           <section class="h-fit w-full text-left mt-16">
             <div class="flex flex-col gap-4">
-              <p class="text-[1.1rem]">Hi, my name is</p>
+              <p class="md:text-[1.1rem]">Hi, my name is</p>
               <p>
-                <span class="text-[2.75rem] font-semibold">Mubashir Irfan</span>
+                <span class="text-[1.5rem] md:text-[2.75rem] font-semibold">Mubashir Irfan</span>
               </p>
-              <p class="text-[1.2rem]">
+              <p class="md:text-[1.2rem]">
                 and I am a
                 <span class="font-semibold">Senior Frontend Engineer</span>
                 based in Abu Dhabi, UAE.
@@ -147,9 +150,13 @@
               </a>
             </div>
 
-            <a class="flex justify-center items-center" href="assets/Mubashir_Senior_Frontend_Engineer.pdf" target="_blank">
+            <a
+              class="flex justify-center items-center"
+              href="assets/Mubashir_Senior_Frontend_Engineer.pdf"
+              target="_blank"
+            >
               <button
-                class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg text-[1.1rem] hover:bg-sky-700 focus:border-sky-300 focus:outline-none"
+                class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg md:text-[1.1rem] hover:bg-sky-700 focus:border-sky-300 focus:outline-none"
               >
                 Download My Resume
               </button>
@@ -202,7 +209,7 @@
         class="min-h-screen w-full md:max-w-[90%] lg:ml-auto flex justify-center overflow-y-scroll"
       >
         <div
-          class="p-8 md:p-8 flex flex-col gap-4 w-full max-w-[90%] mx-auto my-auto overflow-y-scroll"
+          class="p-2 md:p-8 flex flex-col gap-4 w-full max-w-[90%] mx-auto my-auto overflow-y-scroll"
         >
           <section class="h-fit w-full text-left mt-16 flex flex-col gap-6">
             <p>
@@ -266,7 +273,7 @@
         class="min-h-screen w-full md:max-w-[90%] lg:ml-auto flex justify-center items-center"
       >
         <div
-          class="m-4 p-8 flex flex-col gap-12 overflow-y-scroll max-w-[90%] mx-auto backdrop-blur h-[90%] bg-slate-900"
+          class="m-1 p-2 md:m-4 md:p-8 flex flex-col gap-12 overflow-y-scroll max-w-[90%] mx-auto backdrop-blur h-[90%] bg-slate-900"
         >
           <section class="flex flex-col gap-4">
             <div class="flex flex-col gap-1">
@@ -722,7 +729,7 @@
                   </button>
                 </form>
               </div>
-              <p class="text-base">
+              <p class="md:text-base">
                 I understand blackbox messages don't tend to be very assuring.
                 If you need to be 100% sure that your message has reached me,
                 you can get in touch via
