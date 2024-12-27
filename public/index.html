@@ -85,9 +85,41 @@
           if (!hash) {
             navLinks[0].classList.add('active-link');
           }
+
+          if (hash) {
+            const targetElement = document.querySelector(hash);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
         };
 
         setActiveLink();
+        navLinks.forEach(link => {
+          console.log('inside for each', link);
+          link.addEventListener('click', e => {
+            const targetHash = link.getAttribute('href'); // Get the href attribute (hash)
+
+            e.preventDefault(); // Prevent the default anchor behavior (instant scroll)
+            console.log('target hash', targetHash);
+            // Update the URL hash manually
+            window.location.hash = targetHash;
+
+            // Find the corresponding target section and scroll it into view smoothly
+            const targetElement = document.querySelector(targetHash);
+            console.log('on click', targetHash);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+
         window.addEventListener('hashchange', setActiveLink);
       });
     </script>
@@ -734,7 +766,7 @@
         >
           <section class="h-fit w-full text-left mt-16">
             We can collaborate, if you need someone to:
-            <ul class="ml-4 mt-4 list-disc flex flex-col gap-4">
+            <ul class="ml-6 mt-4 list-disc flex flex-col gap-4">
               <li>convert designs into a functional web app</li>
               <li>consult with to improve or evolve your app</li>
               <li>realize your passionate idea into an app</li>
