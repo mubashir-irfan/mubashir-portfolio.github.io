@@ -30,7 +30,7 @@
       property="og:description"
       content="Frontend Developer specializing in React, Tailwind CSS, and modern web technologies."
     />
-    <meta property="og:image" content="./assets/images/preview.png" />
+    <meta property="og:image" content="./assets/mubashir.jpeg" />
     <meta property="og:url" content="https://mubashirirfan.dev" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -61,8 +61,36 @@
         font-weight: normal;
         font-style: normal;
       }
+      ul li:not(:first-child) {
+        margin-top: 0.4rem;
+      }
+
+      .active-link {
+        color: #0ea5e9; /* Sky color */
+        font-weight: 600;
+      }
     </style>
-    <script src="https://cdn.tailwindcss.com" ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('nav ul a');
+        const setActiveLink = () => {
+          const hash = window.location.hash;
+          navLinks.forEach(link => {
+            link.classList.remove('active-link');
+            if (link.getAttribute('href') === hash)
+              link.classList.add('active-link');
+          });
+
+          if (!hash) {
+            navLinks[0].classList.add('active-link');
+          }
+        };
+
+        setActiveLink();
+        window.addEventListener('hashchange', setActiveLink);
+      });
+    </script>
   </head>
 
   <body>
@@ -70,46 +98,50 @@
       class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-gradient-to-br from-slate-900 to-black text-white text-sm md:text-base lg:text-lg overflow-y-hidden"
     >
       <!-- Navigation Links for tab and higher -->
-      <ul
-        class="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-8 py-[5rem] rounded-xl justify-around ml-auto p-4 py-3 border-r border-sky-600 text-base"
-      >
-        <li class="hover:text-sky-600">
-          <a href="#brief">Brief</a>
-        </li>
-        <li class="hover:text-sky-600">
-          <a href="#skillset" class="scroll-smooth">Skillset</a>
-        </li>
-        <li class="hover:text-sky-600">
-          <a href="#experience" class="scroll-smooth">Experience</a>
-        </li>
-        <li class="hover:text-sky-600">
-          <a href="#hireMe">Hire Me</a>
-        </li>
-        <li class="hover:text-sky-600">
-          <a href="#contact">Say Hi</a>
-        </li>
-      </ul>
+      <nav>
+        <ul
+          class="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-8 py-[5rem] rounded-xl justify-around ml-auto p-4 py-3 border-r border-sky-600 text-base"
+        >
+          <li class="hover:text-sky-600">
+            <a href="#brief">Brief</a>
+          </li>
+          <li class="hover:text-sky-600">
+            <a href="#skillset">Skillset</a>
+          </li>
+          <li class="hover:text-sky-600">
+            <a href="#experience">Experience</a>
+          </li>
+          <li class="hover:text-sky-600">
+            <a href="#services">Services</a>
+          </li>
+          <li class="hover:text-sky-600">
+            <a href="#contact">Say Hi</a>
+          </li>
+        </ul>
+      </nav>
 
-      <ul
-        class="text-sm flex lg:hidden z-10 min-w-[80%] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-2 border-sky-600 text-base rounded-xl backdrop-blur"
-      >
-        <!-- Navigation Links for phones -->
-        <li class="hover:text-sky-600">
-          <a href="#brief">Brief</a>
-        </li>
-        <li class="hover:text-sky-600">
-          <a href="#skillset" class="scroll-smooth">Skillset</a>
-        </li>
-        <li class="hover:text-sky-600">
-          <a href="#experience" class="scroll-smooth">Experience</a>
-        </li>
-        <li class="hover:text-sky-600 min-w-fit">
-          <a href="#hireMe">Hire Me</a>
-        </li>
-        <li class="hover:text-sky-600 min-w-fit">
-          <a href="#contact">Say Hi</a>
-        </li>
-      </ul>
+      <nav>
+        <ul
+          class="text-sm flex lg:hidden z-10 min-w-[80%] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-2 border-sky-600 text-base rounded-xl backdrop-blur"
+        >
+          <!-- Navigation Links for phones -->
+          <li class="hover:text-sky-600">
+            <a href="#brief">Brief</a>
+          </li>
+          <li class="hover:text-sky-600">
+            <a href="#skillset">Skillset</a>
+          </li>
+          <li class="hover:text-sky-600">
+            <a href="#experience">Experience</a>
+          </li>
+          <li class="hover:text-sky-600 min-w-fit">
+            <a href="#services">Hire Me</a>
+          </li>
+          <li class="hover:text-sky-600 min-w-fit">
+            <a href="#contact">Say Hi</a>
+          </li>
+        </ul>
+      </nav>
 
       <div
         id="brief"
@@ -248,23 +280,41 @@
             </p>
             <ul class="ml-4 list-disc">
               <li>
-                Writing HTML, CSS, Tailwind, JavaScript for converting mockups
-                into interactive screens
+                Writing
+                <span class="font-bold">HTML, CSS, Tailwind, JavaScript</span>
+                for converting mockups into interactive screens
               </li>
               <li>
-                Integrating APIs and handling their state with React Query, RxJS
+                Integrating APIs and handling their state with
+                <span class="font-bold">React Query, RxJS</span>
               </li>
-              <li>Implementing logics and functionality in TypeScript</li>
               <li>
-                Developing fully functional applications with React/NexTJS and
-                Angular 2+
+                Implementing logics and functionality in
+                <span class="font-bold">TypeScript</span>
               </li>
-              <li>Managing UI state with React Context, Redux, NgRX</li>
-              <li>Testing my code with Jest, Jasmine</li>
-              <li>Monitoring my code in production with TrackJS, Sentry</li>
-              <li>Tracking health of systems with Grafana, Prometheus</li>
               <li>
-                Studying how users engage with my work through Pendo, Mixpanel
+                Developing fully functional applications with
+                <span class="font-bold">React/NexTJS , Angular 2+ </span>
+              </li>
+              <li>
+                Managing UI state with
+                <span class="font-bold">React Context, Redux, NgRX</span>
+              </li>
+              <li>
+                Testing my code with
+                <span class="font-bold"> Jest, Jasmine</span>
+              </li>
+              <li>
+                Monitoring my code in production with
+                <span class="font-bold"> TrackJS, Sentry</span>
+              </li>
+              <li>
+                Tracking health of systems with
+                <span class="font-bold"> Grafana, Prometheus</span>
+              </li>
+              <li>
+                Studying how users engage with my work through
+                <span class="font-bold"> Pendo, Mixpanel </span>
               </li>
             </ul>
             <p>
@@ -275,12 +325,16 @@
             </p>
             <ul class="ml-4 list-disc">
               <li>
-                NodeJS + Express for Server Instance, Middleware and Endpoints
+                <span class="font-bold"> NodeJS + Express </span> for Server
+                Instance, Middleware and Endpoints
               </li>
-              <li>MySQL for structured databases queried through Prisma ORM</li>
               <li>
-                Firebase/Firestore and MongoDB for NoSQL databases queried
-                through ODMs like Mongoose and Fire clients
+                <span class="font-bold"> MySQL</span> for structured databases
+                queried through Prisma ORM
+              </li>
+              <li>
+                <span class="font-bold"> Firebase/Firestore, MongoDB </span>
+                NoSQL databases queried through ODMs like Mongoose
               </li>
             </ul>
           </section>
@@ -322,7 +376,7 @@
             <div class="flex gap-4">
               <div>
                 <p>Responsible for:</p>
-                <ul class="ml-4">
+                <ul class="ml-4 list-disc">
                   <li>Developing Iqraa Dashboard with NextJS</li>
                   <li>Implementing UI with Headless UI and TailwindCSS</li>
                   <li>
@@ -400,7 +454,7 @@
             </div>
             <div class="flex gap-4">
               <div>
-                <ul class="ml-4">
+                <ul class="ml-4 list-disc">
                   <li>
                     Developed Careem Bikes Admin Dashboard with NextJS and
                     TypeScript
@@ -467,7 +521,7 @@
             </div>
             <div class="flex gap-4">
               <div>
-                <ul class="ml-4">
+                <ul class="ml-4 list-disc">
                   <li>
                     Wrote HTML, CSS, and TypeScript in React, participating in
                     peer code reviews and pair programming
@@ -559,7 +613,7 @@
             </div>
             <div class="flex gap-4">
               <div>
-                <ul class="ml-4">
+                <ul class="ml-4 list-disc">
                   <li>
                     Wrote TypeScript, and RxJS in Angular 2+, Ant Design, and
                     Unit Tests for an enterprise application
@@ -634,7 +688,7 @@
             </div>
             <div class="flex gap-4">
               <div>
-                <ul class="ml-4">
+                <ul class="ml-4 list-disc">
                   <li>
                     Developed Angular 2+ powered dashboard with Material UI
                   </li>
@@ -672,15 +726,15 @@
       </div>
 
       <div
-        id="hireMe"
+        id="services"
         class="min-h-screen w-full md:max-w-[90%] lg:ml-auto flex justify-center items-center"
       >
         <div
           class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full max-w-[90%] px-4 mx-auto my-autp backdrop-blur h-[90%]"
         >
           <section class="h-fit w-full text-left mt-16">
-            I can add value to your work, if you need someone to:
-            <ul class="ml-4 list-disc">
+            We can collaborate, if you need someone to:
+            <ul class="ml-4 mt-4 list-disc flex flex-col gap-4">
               <li>convert designs into a functional web app</li>
               <li>consult with to improve or evolve your app</li>
               <li>realize your passionate idea into an app</li>
