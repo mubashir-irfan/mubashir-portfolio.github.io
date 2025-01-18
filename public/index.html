@@ -77,77 +77,61 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer>
-      // document.addEventListener('DOMContentLoaded', () => {
-      //   const navLinks = document.querySelectorAll('nav ul a');
-      //   const setActiveLink = () => {
-      //     const hash = window.location.hash;
-      //     navLinks.forEach(link => {
-      //       link.classList.remove('active-link');
-      //       if (link.getAttribute('href') === hash)
-      //         link.classList.add('active-link');
-      //     });
-
-      //     if (!hash) {
-      //       navLinks[0].classList.add('active-link');
-      //     }
-
-      //     if (hash) {
-      //       const targetElement = document.querySelector(hash);
-      //       if (targetElement) {
-      //         targetElement.scrollIntoView({
-      //           behavior: 'smooth',
-      //           block: 'start'
-      //         });
-      //       }
-      //     }
-      //   };
-
-      //   setActiveLink();
-      //   navLinks.forEach(link => {
-      //     link.addEventListener('click', e => {
-      //       const targetHash = link.getAttribute('href'); // Get the href attribute (hash)
-
-      //       e.preventDefault(); // Prevent the default anchor behavior (instant scroll)
-      //       console.log('target hash', targetHash);
-      //       // Update the URL hash manually
-      //       window.location.hash = targetHash;
-
-      //       // Find the corresponding target section and scroll it into view smoothly
-      //       const targetElement = document.querySelector(targetHash);
-      //       if (targetElement) {
-      //         targetElement.scrollIntoView({
-      //           behavior: 'smooth',
-      //           block: 'start'
-      //         });
-      //       }
-      //     });
-      //   });
-
-      //   window.addEventListener('hashchange', setActiveLink);
-      // });
-
       document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.content-section');
 
+        const showSection = sectionId => {
+          // Hide all sections
+          sections.forEach(section => section.classList.add('hidden'));
+
+          // Show the target section
+          const targetSection = document.getElementById(sectionId);
+          if (targetSection) {
+            targetSection.classList.remove('hidden');
+          }
+
+          // Highlight the corresponding nav link
+          navLinks.forEach(nav =>
+            nav.classList.remove('text-blue-500', 'font-semibold')
+          );
+          const activeLink = Array.from(navLinks).find(
+            nav => nav.dataset.section === sectionId
+          );
+          if (activeLink) {
+            activeLink.classList.add('text-blue-500', 'font-semibold');
+          }
+        };
+
+        // Handle nav link clicks
         navLinks.forEach(link => {
           link.addEventListener('click', e => {
             e.preventDefault();
 
-            // Hide all sections
-            sections.forEach(section => section.classList.add('hidden'));
-
-            // Get the associated section and make it visible
             const sectionId = link.dataset.section;
-            console.log('making visible:', sectionId);
-            document.getElementById(sectionId).classList.remove('hidden');
 
-            // Highlight the active nav link
-            navLinks.forEach(nav =>
-              nav.classList.remove('text-blue-500', 'font-semibold')
-            );
-            link.classList.add('text-blue-500', 'font-semibold');
+            // Update the URL hash
+            history.pushState(null, '', `#${sectionId}`);
+
+            // Show the selected section
+            showSection(sectionId);
           });
+        });
+
+        // Check URL hash on page load
+        const currentHash = window.location.hash.replace('#', '');
+        if (currentHash) {
+          showSection(currentHash);
+        } else {
+          // Default to the first section if no hash
+          const firstSectionId = navLinks[0]?.dataset.section;
+          if (firstSectionId) showSection(firstSectionId);
+        }
+
+        // Handle hash changes dynamically
+        window.addEventListener('hashchange', () => {
+          const newHash = window.location.hash.replace('#', '');
+          showSection(newHash);
         });
       });
     </script>
@@ -157,29 +141,6 @@
     <div
       class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-gradient-to-br from-slate-900 to-black text-white text-sm md:text-base overflow-y-auto"
     >
-      <!-- Navigation Links for tab and higher -->
-      <!-- <nav>
-        <ul
-          class="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 py-[2rem] rounded-xl justify-around ml-auto p-4 py-3 border-r border-sky-600 text-sm"
-        >
-          <li class="hover:text-sky-600">
-            <a href="#brief">Brief</a>
-          </li>
-          <li class="hover:text-sky-600 border-t border-sky-600">
-            <a href="#skillset">Skillset</a>
-          </li>
-          <li class="hover:text-sky-600">
-            <a href="#experience">Experience</a>
-          </li>
-          <li class="hover:text-sky-600">
-            <a href="#services">Services</a>
-          </li>
-          <li class="hover:text-sky-600">
-            <a href="#contact">Say Hi</a>
-          </li>
-        </ul>
-      </nav> -->
-
       <nav>
         <ul
           class="text-xs flex z-10 w-full md:w-[30rem] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-3 border-sky-600 text-base rounded-xl backdrop-blur"
