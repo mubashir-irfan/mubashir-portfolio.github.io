@@ -61,8 +61,13 @@
         font-weight: normal;
         font-style: normal;
       }
-      ul li:not(:first-child) {
-        margin-top: 0.4rem;
+
+      .content-section {
+        display: block;
+      }
+
+      .hidden {
+        display: none !important;
       }
 
       .active-link {
@@ -72,70 +77,95 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer>
+      // document.addEventListener('DOMContentLoaded', () => {
+      //   const navLinks = document.querySelectorAll('nav ul a');
+      //   const setActiveLink = () => {
+      //     const hash = window.location.hash;
+      //     navLinks.forEach(link => {
+      //       link.classList.remove('active-link');
+      //       if (link.getAttribute('href') === hash)
+      //         link.classList.add('active-link');
+      //     });
+
+      //     if (!hash) {
+      //       navLinks[0].classList.add('active-link');
+      //     }
+
+      //     if (hash) {
+      //       const targetElement = document.querySelector(hash);
+      //       if (targetElement) {
+      //         targetElement.scrollIntoView({
+      //           behavior: 'smooth',
+      //           block: 'start'
+      //         });
+      //       }
+      //     }
+      //   };
+
+      //   setActiveLink();
+      //   navLinks.forEach(link => {
+      //     link.addEventListener('click', e => {
+      //       const targetHash = link.getAttribute('href'); // Get the href attribute (hash)
+
+      //       e.preventDefault(); // Prevent the default anchor behavior (instant scroll)
+      //       console.log('target hash', targetHash);
+      //       // Update the URL hash manually
+      //       window.location.hash = targetHash;
+
+      //       // Find the corresponding target section and scroll it into view smoothly
+      //       const targetElement = document.querySelector(targetHash);
+      //       if (targetElement) {
+      //         targetElement.scrollIntoView({
+      //           behavior: 'smooth',
+      //           block: 'start'
+      //         });
+      //       }
+      //     });
+      //   });
+
+      //   window.addEventListener('hashchange', setActiveLink);
+      // });
+
       document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('nav ul a');
-        const setActiveLink = () => {
-          const hash = window.location.hash;
-          navLinks.forEach(link => {
-            link.classList.remove('active-link');
-            if (link.getAttribute('href') === hash)
-              link.classList.add('active-link');
-          });
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.content-section');
 
-          if (!hash) {
-            navLinks[0].classList.add('active-link');
-          }
-
-          if (hash) {
-            const targetElement = document.querySelector(hash);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          }
-        };
-
-        setActiveLink();
         navLinks.forEach(link => {
           link.addEventListener('click', e => {
-            const targetHash = link.getAttribute('href'); // Get the href attribute (hash)
+            e.preventDefault();
 
-            e.preventDefault(); // Prevent the default anchor behavior (instant scroll)
-            console.log('target hash', targetHash);
-            // Update the URL hash manually
-            window.location.hash = targetHash;
+            // Hide all sections
+            sections.forEach(section => section.classList.add('hidden'));
 
-            // Find the corresponding target section and scroll it into view smoothly
-            const targetElement = document.querySelector(targetHash);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
+            // Get the associated section and make it visible
+            const sectionId = link.dataset.section;
+            console.log('making visible:', sectionId);
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            // Highlight the active nav link
+            navLinks.forEach(nav =>
+              nav.classList.remove('text-blue-500', 'font-semibold')
+            );
+            link.classList.add('text-blue-500', 'font-semibold');
           });
         });
-
-        window.addEventListener('hashchange', setActiveLink);
       });
     </script>
   </head>
 
   <body>
     <div
-      class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-gradient-to-br from-slate-900 to-black text-white text-sm md:text-base lg:text-lg overflow-y-hidden"
+      class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-gradient-to-br from-slate-900 to-black text-white text-sm md:text-base overflow-y-auto"
     >
       <!-- Navigation Links for tab and higher -->
-      <nav>
+      <!-- <nav>
         <ul
-          class="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-8 py-[5rem] rounded-xl justify-around ml-auto p-4 py-3 border-r border-sky-600 text-base"
+          class="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 py-[2rem] rounded-xl justify-around ml-auto p-4 py-3 border-r border-sky-600 text-sm"
         >
           <li class="hover:text-sky-600">
             <a href="#brief">Brief</a>
           </li>
-          <li class="hover:text-sky-600">
+          <li class="hover:text-sky-600 border-t border-sky-600">
             <a href="#skillset">Skillset</a>
           </li>
           <li class="hover:text-sky-600">
@@ -148,38 +178,43 @@
             <a href="#contact">Say Hi</a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
 
       <nav>
         <ul
-          class="text-xs flex lg:hidden z-10 min-w-[80%] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-2 border-sky-600 text-base rounded-xl backdrop-blur"
+          class="text-xs flex z-10 w-full md:w-[30rem] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-3 border-sky-600 text-base rounded-xl backdrop-blur"
         >
-          <!-- Navigation Links for phones -->
           <li class="hover:text-sky-600">
-            <a href="#brief">Brief</a>
+            <a data-section="brief" class="nav-link">Brief</a>
           </li>
           <li class="hover:text-sky-600">
-            <a href="#skillset">Skillset</a>
+            <a data-section="skills" class="nav-link">Skills</a>
           </li>
           <li class="hover:text-sky-600">
-            <a href="#experience">Experience</a>
+            <a href="#experience" data-section="experience" class="nav-link"
+              >Experience</a
+            >
           </li>
           <li class="hover:text-sky-600 min-w-fit">
-            <a href="#services">Hire Me</a>
+            <a href="#services" data-section="hireMe" class="nav-link"
+              >Hire Me</a
+            >
           </li>
           <li class="hover:text-sky-600 min-w-fit">
-            <a href="#contact">Say Hi</a>
+            <a href="#contact" data-section="contact" class="nav-link"
+              >Say Hi</a
+            >
           </li>
         </ul>
       </nav>
 
       <div
         id="brief"
-        class="content-parent w-full lg:ml-auto md:max-w-[90%] min-h-screen flex flex-col"
+        class="content-section w-full lg:ml-auto md:max-w-[75%] mx-auto min-h-screen flex flex-col"
       >
         <!--- Landing Page-->
         <div
-          class="p-2 md:p-8 flex flex-col gap-4 max-w-[90%] mx-auto my-2 md:my-auto overflow-y-scroll"
+          class="p-2 md:p-8 flex flex-col gap-4 max-w-[75%] mx-auto mx-auto my-2 md:my-auto overflow-y-scroll"
         >
           <section class="h-fit w-full text-left mt-16">
             <div class="flex flex-col gap-4">
@@ -248,7 +283,7 @@
               target="_blank"
             >
               <button
-                class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg md:text-[1.1rem] hover:bg-sky-700 focus:border-sky-300 focus:outline-none"
+                class="p-2 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg hover:bg-sky-700 focus:border-sky-300 focus:outline-none"
               >
                 Download My Resume
               </button>
@@ -269,14 +304,14 @@
                 the code
                 <a
                   href="https://unused-css.com/blog/"
-                  class="text-sky-600 underline"
+                  class="text-sky-600 underline font-bold"
                   rel="noopener"
                   target="_blank"
                   >blog
                 </a>
                 &nbsp;of
                 <span class="font-semibold">UnUsedCSS</span>
-                - a CSS minifIer based out of London.
+                - a CSS minifier based out of London.
               </p>
             </div>
           </section>
@@ -297,11 +332,11 @@
       </div>
 
       <div
-        id="skillset"
-        class="min-h-screen w-full md:max-w-[90%] lg:ml-auto flex justify-center overflow-y-scroll"
+        id="skills"
+        class="content-section hidden min-h-screen w-full md:max-w-[75%] mx-auto lg:ml-auto flex justify-center overflow-y-scroll text-justify"
       >
         <div
-          class="p-2 md:p-8 flex flex-col gap-4 w-full max-w-[90%] mx-auto my-auto overflow-y-scroll"
+          class="p-2 md:p-8 flex flex-col gap-4 w-full max-w-[75%] mx-auto mx-auto my-auto overflow-y-scroll"
         >
           <section class="h-fit w-full text-left mt-16 flex flex-col gap-6">
             <p>
@@ -384,14 +419,14 @@
 
       <div
         id="experience"
-        class="min-h-screen w-full md:max-w-[90%] lg:ml-auto flex justify-center items-center"
+        class="content-section hidden min-h-screen w-full md:max-w-[75%] mx-auto lg:ml-auto flex justify-center items-center"
       >
         <div
-          class="m-1 p-2 md:m-4 md:p-8 flex flex-col gap-12 overflow-y-scroll max-w-[90%] mx-auto backdrop-blur h-[90%]"
+          class="m-1 p-2 md:m-4 md:p-8 flex flex-col gap-12 overflow-y-scroll max-w-[75%] mx-auto backdrop-blur h-[90%]"
         >
           <section class="flex flex-col gap-4">
             <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-2xl font-bold">
+              <h2 class="text-lg lg:text-xl font-bold">
                 Senior Frontend Engineer at
                 <a
                   href="https://www.linkedin.com/company/locai"
@@ -470,7 +505,7 @@
 
           <section class="flex flex-col gap-4">
             <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-2xl font-bold">
+              <h2 class="text-lg lg:text-xl font-bold">
                 Senior Frontend Engineer at
                 <a
                   href="https://www.careem.com/"
@@ -537,7 +572,7 @@
 
           <section class="flex flex-col gap-4">
             <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-2xl font-bold">
+              <h2 class="text-lg lg:text-xl font-bold">
                 Frontend Engineer II at
                 <a
                   href="https://rayn.group//"
@@ -601,7 +636,7 @@
                   href="https://www.endpolio.com.pk"
                   target="_blank"
                   rel="noopener"
-                  class="text-sky-600"
+                  class="text-sky-600 font-bold"
                   >Pakistan Polio Eradication Programme</a
                 >
                 - the national Web Dashboard for live and legacy management of
@@ -629,7 +664,7 @@
 
           <section class="flex flex-col gap-4">
             <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-2xl font-bold">
+              <h2 class="text-lg lg:text-xl font-bold">
                 L4 Frontend Engineer
                 <a
                   href="https://gomotive.com/"
@@ -704,7 +739,7 @@
 
           <section class="flex flex-col gap-4">
             <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-2xl font-bold">
+              <h2 class="text-lg lg:text-xl font-bold">
                 Frontend Engineer
                 <a
                   href="https://www.xgrid.co/"
@@ -756,11 +791,11 @@
       </div>
 
       <div
-        id="services"
-        class="min-h-screen w-full md:max-w-[90%] lg:ml-auto flex justify-center items-center"
+        id="hireMe"
+        class="content-section hidden min-h-screen w-full md:max-w-[75%] mx-auto lg:ml-auto flex justify-center items-center"
       >
         <div
-          class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full max-w-[90%] px-4 mx-auto my-autp backdrop-blur h-[90%]"
+          class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full max-w-[75%] mx-auto px-4 mx-auto my-autp backdrop-blur h-[90%]"
         >
           <section class="h-fit w-full text-left mt-16">
             We can collaborate, if you need someone to:
@@ -805,10 +840,10 @@
 
       <div
         id="contact"
-        class="min-h-screen w-full md:max-w-[90%] lg:ml-auto flex justify-center items-center"
+        class="content-section hidden min-h-screen w-full md:max-w-[75%] mx-auto lg:ml-auto flex justify-center items-center"
       >
         <div
-          class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full max-w-[90%] px-4 mx-auto my-autp backdrop-blur h-[90%]"
+          class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full max-w-[75%] mx-auto px-4 mx-auto my-autp backdrop-blur h-[90%]"
         >
           <section class="h-fit w-full text-left mt-16">
             <div class="flex flex-col gap-8">
