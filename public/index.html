@@ -69,6 +69,10 @@
         display: none !important;
       }
 
+      .nav-link {
+        cursor: pointer;
+      }
+
       .active-link {
         color: #0ea5e9; /* Sky color */
         font-weight: 600;
@@ -92,13 +96,13 @@
 
           // Highlight the corresponding nav link
           navLinks.forEach(nav =>
-            nav.classList.remove('text-blue-500', 'font-semibold')
+            nav.classList.remove('text-sky-600', 'font-medium')
           );
           const activeLink = Array.from(navLinks).find(
             nav => nav.dataset.section === sectionId
           );
           if (activeLink) {
-            activeLink.classList.add('text-blue-500', 'font-semibold');
+            activeLink.classList.add('text-sky-600', 'font-medium');
           }
         };
 
