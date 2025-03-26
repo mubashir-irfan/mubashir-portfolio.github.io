@@ -1,880 +1,731 @@
 <!DOCTYPE html>
 <html lang="en" class="!scroll-smooth">
-  <head>
-    <title>Mubashir Irfan | Frontend Developer Developer</title>
-    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--- Raleway font import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head>
+  <title>Mubashir Irfan | Frontend Engineer</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
+  <!--- Raleway font import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <meta
-      name="description"
-      content="Mubashir Irfan - Frontend Developer with expertise in modern web technologies like React, Tailwind CSS, and more."
-    />
-    <meta
-      name="keywords"
-      content="Frontend Developer, React, Tailwind CSS, JavaScript, Mubashir Irfan"
-    />
-    <meta property="og:title" content="Mubashir Irfan | Senior Frontend Engineer" />
-    <meta
-      property="og:description"
-      content="Frontend Developer specializing in React, Tailwind CSS, and modern web technologies."
-    />
-    <meta property="og:image" content="./assets/mubashir.jpeg" />
-    <meta property="og:url" content="https://mubashirirfan.dev" />
-    <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
 
-    <style>
-      * {
-        font-family: sans-serif;
-        font-weight: 100;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        line-height: 1.75;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
-      @font-face {
-        font-family: 'KGBlankSpaceSolid';
-        src: url('assets/fonts/KGBlankSpaceSolid.woff2') format('woff2'),
-          url('assets/fonts/KGBlankSpaceSolid.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-      }
+  <meta name="description"
+    content="Mubashir Irfan - Frontend Developer with expertise in modern web technologies like React, Tailwind CSS, and more." />
+  <meta name="keywords" content="Frontend Developer, React, Tailwind CSS, JavaScript, Mubashir Irfan" />
+  <meta property="og:title" content="Mubashir Irfan | Senior Frontend Engineer" />
+  <meta property="og:description"
+    content="Frontend Developer specializing in React, Tailwind CSS, and modern web technologies." />
+  <meta property="og:image" content="./assets/mubashir.jpeg" />
+  <meta property="og:url" content="https://mubashirirfan.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-      @font-face {
-        font-family: 'KGBlankSpaceSketch';
-        src: url('assets/fonts/KGBlankSpaceSketch.woff2') format('woff2'),
-          url('assets/fonts/KGBlankSpaceSketch.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-      }
+  <style>
+    * {
+      font-family: "Sora", "Roboto Mono", "Open Sans", sans-serif;
+      font-weight: 100;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1.75;
+    }
 
-      .content-section {
-        display: block;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      .hidden {
-        display: none !important;
-      }
+    @font-face {
+      font-family: 'KGBlankSpaceSolid';
+      src: url('assets/fonts/KGBlankSpaceSolid.woff2') format('woff2'),
+        url('assets/fonts/KGBlankSpaceSolid.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-      .nav-link {
-        cursor: pointer;
-      }
+    @font-face {
+      font-family: 'KGBlankSpaceSketch';
+      src: url('assets/fonts/KGBlankSpaceSketch.woff2') format('woff2'),
+        url('assets/fonts/KGBlankSpaceSketch.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-      .active-link {
-        color: #0ea5e9; /* Sky color */
-        font-weight: 600;
-      }
-    </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer>
-      document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('.content-section');
+    .content-section {
+      display: block;
+    }
 
-        const showSection = sectionId => {
-          // Hide all sections
-          sections.forEach(section => section.classList.add('hidden'));
+    .hidden {
+      display: none !important;
+    }
 
-          // Show the target section
-          const targetSection = document.getElementById(sectionId);
-          if (targetSection) {
-            targetSection.classList.remove('hidden');
-          }
+    .nav-link {
+      cursor: pointer;
+    }
 
-          // Highlight the corresponding nav link
-          navLinks.forEach(nav =>
-            nav.classList.remove('text-sky-600', 'font-medium')
-          );
-          const activeLink = Array.from(navLinks).find(
-            nav => nav.dataset.section === sectionId
-          );
-          if (activeLink) {
-            activeLink.classList.add('text-sky-600', 'font-medium');
-          }
-        };
+    .active-link {
+      color: #0ea5e9;
+      /* Sky color */
+      font-weight: 600;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('.content-section');
 
-        // Handle nav link clicks
-        navLinks.forEach(link => {
-          link.addEventListener('click', e => {
-            e.preventDefault();
+      const showSection = sectionId => {
+        // Hide all sections
+        sections.forEach(section => section.classList.add('hidden'));
 
-            const sectionId = link.dataset.section;
-
-            // Update the URL hash
-            history.pushState(null, '', `#${sectionId}`);
-
-            // Show the selected section
-            showSection(sectionId);
-          });
-        });
-
-        // Check URL hash on page load
-        const currentHash = window.location.hash.replace('#', '');
-        if (currentHash) {
-          showSection(currentHash);
-        } else {
-          // Default to the first section if no hash
-          const firstSectionId = navLinks[0]?.dataset.section;
-          if (firstSectionId) showSection(firstSectionId);
+        // Show the target section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.remove('hidden');
         }
 
-        // Handle hash changes dynamically
-        window.addEventListener('hashchange', () => {
-          const newHash = window.location.hash.replace('#', '');
-          showSection(newHash);
+        // Highlight the corresponding nav link
+        navLinks.forEach(nav =>
+          nav.classList.remove('text-sky-600', 'font-medium')
+        );
+        const activeLink = Array.from(navLinks).find(
+          nav => nav.dataset.section === sectionId
+        );
+        if (activeLink) {
+          activeLink.classList.add('text-sky-600', 'font-medium');
+        }
+      };
+
+      // Handle nav link clicks
+      navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+
+          const sectionId = link.dataset.section;
+
+          // Update the URL hash
+          history.pushState(null, '', `#${sectionId}`);
+
+          // Show the selected section
+          showSection(sectionId);
         });
       });
-    </script>
 
-    <script
-      src="https://topmate-embed.s3.ap-south-1.amazonaws.com/v1/topmate-embed.js"
-      user-profile="https://topmate.io/embed/profile/mubashir?theme=ffffff"
-      btn-style='{"backgroundColor":"#000","color":"#fff","border":"1px solid #000"}'
-      embed-version="v1"
-      button-text="Meet Me on Topmate"
-      position-right="30px"
-      position-bottom="30px"
-      custom-padding="0px"
-      custom-font-size="16px"
-      custom-font-weight="500"
-      custom-width="200px"
-      async=""
-      defer=""
-    ></script>
-  </head>
+      // Check URL hash on page load
+      const currentHash = window.location.hash.replace('#', '');
+      if (currentHash) {
+        showSection(currentHash);
+      } else {
+        // Default to the first section if no hash
+        const firstSectionId = navLinks[0]?.dataset.section;
+        if (firstSectionId) showSection(firstSectionId);
+      }
 
-  <body>
-    <div
-      class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-gradient-to-br from-slate-900 to-black text-white text-sm md:text-base overflow-y-auto"
-    >
-      <nav>
-        <ul
-          class="text-xs flex z-10 w-full md:w-[30rem] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-3 border-sky-600 text-base rounded-xl backdrop-blur"
-        >
-          <li class="hover:text-sky-600">
-            <a data-section="brief" class="nav-link">Brief</a>
-          </li>
-          <li class="hover:text-sky-600">
-            <a data-section="skills" class="nav-link">Skills</a>
-          </li>
-          <li class="hover:text-sky-600">
-            <a href="#experience" data-section="experience" class="nav-link"
-              >Experience</a
-            >
-          </li>
-          <li class="hover:text-sky-600 min-w-fit">
-            <a href="#hireMe" data-section="hireMe" class="nav-link"
-              >Hire Me</a
-            >
-          </li>
-          <li class="hover:text-sky-600 min-w-fit">
-            <a href="#contact" data-section="contact" class="nav-link"
-              >Say Hi</a
-            >
-          </li>
-        </ul>
-      </nav>
+      // Handle hash changes dynamically
+      window.addEventListener('hashchange', () => {
+        const newHash = window.location.hash.replace('#', '');
+        showSection(newHash);
+      });
+    });
+  </script>
 
-      <div
-        id="brief"
-        class="content-section w-full lg:ml-auto px-4 sm:max-w-[75%] mx-auto min-h-screen flex flex-col"
-      >
-        <!--- Landing Page-->
-        <div
-          class="p-2 md:p-8 flex flex-col gap-4 my-2 md:my-auto overflow-y-scroll"
-        >
-          <section class="h-fit w-full text-left mt-16">
-            <div class="flex flex-col gap-4">
-              <p class="md:text-[1.1rem]">Hi, my name is</p>
-              <p>
-                <span class="text-[1.5rem] md:text-[2.75rem] font-semibold"
-                  >Mubashir Irfan</span
-                >
-              </p>
-              <p class="md:text-[1.2rem]">
-                and I am a
-                <span class="font-semibold">Senior Frontend Engineer</span>
-                based in Abu Dhabi, UAE.
-              </p>
-            </div>
+  <script src="https://topmate-embed.s3.ap-south-1.amazonaws.com/v1/topmate-embed.js"
+    user-profile="https://topmate.io/embed/profile/mubashir?theme=ffffff"
+    btn-style='{"backgroundColor":"#000","color":"#fff","border":"1px solid #000"}' embed-version="v1"
+    button-text="Meet Me on Topmate" position-right="30px" position-bottom="30px" custom-padding="0px"
+    custom-font-size="16px" custom-font-weight="500" custom-width="200px" async="" defer=""></script>
+</head>
 
-            <div class="flex gap-4 my-8 w-fit">
-              <a
-                title="Mubashir's Linkedin Profile"
-                target="_blank"
-                href="https://www.linkedin.com/in/muhammad-mubashir-irfan/"
-                rel="noopener"
-              >
-                <svg
-                  class="w-12 h-12 text-white hover:text-sky-500 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 48 48"
-                  width="48px"
-                  height="48px"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
-                  />
-                  <path
-                    fill="#0F172A"
-                    d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
-                  />
-                </svg>
-              </a>
+<body>
+  <div
+    class="global-parent h-screen w-screen flex flex-col items-center lg:px-8 bg-black text-white text-sm md:text-base overflow-y-auto">
+    <nav>
+      <ul
+        class="text-xs flex z-10 w-full md:w-[30rem] md:text-[0.9rem] absolute left-1/2 top-0 -translate-x-1/2 gap-4 justify-around border-b px-6 py-3 border-sky-600 text-base rounded-xl backdrop-blur">
+        <li class="hover:text-sky-600">
+          <a data-section="brief" class="nav-link">Brief</a>
+        </li>
+        <li class="hover:text-sky-600">
+          <a data-section="skills" class="nav-link">Skills</a>
+        </li>
+        <li class="hover:text-sky-600">
+          <a href="#experience" data-section="experience" class="nav-link">Experience</a>
+        </li>
+        <li class="hover:text-sky-600 min-w-fit">
+          <a href="#hireMe" data-section="hireMe" class="nav-link">Hire Me</a>
+        </li>
+        <li class="hover:text-sky-600 min-w-fit">
+          <a href="#contact" data-section="contact" class="nav-link">Say Hi</a>
+        </li>
+      </ul>
+    </nav>
 
-              <a
-                title="Mubashir's Upwork Profile"
-                target="_blank"
-                href="https://www.upwork.com/freelancers/~0130ded4b0a288246d"
-                rel="noopener"
-              >
-                <svg
-                  class="w-12 h-12 text-white hover:text-sky-500 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 50 50"
-                  width="45px"
-                  height="45px"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M 1 9 C 0.448 9 0 9.448 0 10 L 0 24.115234 C 0 30.276234 4.6829844 35.631469 10.833984 35.980469 C 16.730984 36.314469 21.747875 32.176391 22.796875 26.650391 C 23.366875 27.420391 23.94625 28.135969 24.53125 28.792969 L 21.001953 43.771484 C 20.932953 44.069484 21.002406 44.380094 21.191406 44.621094 C 21.382406 44.859094 21.670563 45 21.976562 45 L 27.095703 45 C 27.559703 45 27.959406 44.687328 28.066406 44.236328 C 28.687406 41.615328 29.660969 37.508156 30.542969 33.785156 L 31.453125 34.3125 C 33.618125 35.4335 35.815 36 38 36 C 45.192 36 50.926 29.641 49.875 22.25 C 49.179 17.354 45.414078 13.318344 40.580078 12.277344 C 34.951078 11.064344 29.525359 13.949141 27.193359 18.744141 C 27.193359 18.744141 26.934562 19.318578 26.726562 19.892578 C 25.076563 17.046578 24.107609 14.094078 23.599609 11.955078 C 23.414609 11.175078 23.137469 9.762875 23.105469 9.671875 C 22.966469 9.268875 22.589109 9 22.162109 9 L 17 9 C 16.448 9 16 9.448 16 10 L 16 24.300781 C 16 26.649781 14.287219 28.750516 11.949219 28.978516 C 9.2672187 29.240516 7 27.13 7 24.5 L 7 10 C 7 9.448 6.552 9 6 9 L 1 9 z M 38 19 C 40.757 19 43 21.243 43 24 C 43 26.757 40.757 29 38 29 C 35.775 29 33.713531 27.658281 32.269531 26.488281 C 32.796531 24.263281 33.15025 22.773047 33.15625 22.748047 C 33.72425 20.541047 35.717 19 38 19 z"
-                  />
-                </svg>
-              </a>
-            </div>
+    <div id="brief" class="content-section w-full lg:ml-auto px-4 sm:max-w-[75%] mx-auto min-h-screen flex flex-col">
+      <!--- Landing Page-->
+      <div class="p-2 md:p-8 flex flex-col gap-4 my-2 md:my-auto overflow-y-scroll">
+        <section class="h-fit w-full text-left mt-16">
+          <div class="flex flex-col gap-4">
+            <p class="md:text-[1.1rem]">Hi, my name is</p>
+            <p>
+              <span class="text-[1.5rem] md:text-[2.75rem] font-semibold">Mubashir Irfan</span>
+            </p>
+            <p class="md:text-[1.2rem]">
+              and I am a
+              <span class="font-semibold">Senior Frontend Engineer</span>
+              based in Abu Dhabi, UAE.
+            </p>
+          </div>
 
-            <a
-              class="flex justify-center items-center"
-              href="assets/Mubashir_Senior_Frontend_Engineer.pdf"
-              target="_blank"
-            >
-              <button
-                class="p-2 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg hover:bg-sky-700 focus:border-sky-300 focus:outline-none"
-              >
-                Download My Resume
-              </button>
+          <div class="flex gap-4 my-8 w-fit">
+            <a title="Mubashir's Linkedin Profile" target="_blank"
+              href="https://www.linkedin.com/in/muhammad-mubashir-irfan/" rel="noopener">
+              <svg class="w-12 h-12 text-white hover:text-sky-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48" width="48px" height="48px">
+                <path fill="currentColor"
+                  d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+                <path fill="#0F172A"
+                  d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z" />
+              </svg>
             </a>
 
-            <div class="flex flex-col gap-3 mt-6 mx-auto text-justify">
-              <p>
-                I convert ideas and designs into human-centric web applications
-                and developer-centric code - and I have been doing so for the
-                last
-                <span class="font-semibold text-sky-600 text-[1.1rem]"
-                  >5 years</span
-                >. I have extensive experience building Modern Web Applications
-                & Experiences, Responsive Layouts, Human-Centric UIs and
-                Developer-centric Codebases using NextJS, React, Tailwind,
-                Angular 2+. I also hold hands-on knowledge and experience of
-                building NodeJS-powered backends. I am also the writer behind
-                the code
-                <a
-                  href="https://unused-css.com/blog/"
-                  class="text-sky-600 underline font-bold"
-                  rel="noopener"
-                  target="_blank"
-                  >blog
-                </a>
-                &nbsp;of
-                <span class="font-semibold">UnUsedCSS</span>
-                - a CSS minifier based out of London.
-              </p>
-            </div>
-          </section>
+            <a title="Mubashir's Upwork Profile" target="_blank"
+              href="https://www.upwork.com/freelancers/~0130ded4b0a288246d" rel="noopener">
+              <svg class="w-12 h-12 text-white hover:text-sky-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50" width="45px" height="45px">
+                <path fill="currentColor"
+                  d="M 1 9 C 0.448 9 0 9.448 0 10 L 0 24.115234 C 0 30.276234 4.6829844 35.631469 10.833984 35.980469 C 16.730984 36.314469 21.747875 32.176391 22.796875 26.650391 C 23.366875 27.420391 23.94625 28.135969 24.53125 28.792969 L 21.001953 43.771484 C 20.932953 44.069484 21.002406 44.380094 21.191406 44.621094 C 21.382406 44.859094 21.670563 45 21.976562 45 L 27.095703 45 C 27.559703 45 27.959406 44.687328 28.066406 44.236328 C 28.687406 41.615328 29.660969 37.508156 30.542969 33.785156 L 31.453125 34.3125 C 33.618125 35.4335 35.815 36 38 36 C 45.192 36 50.926 29.641 49.875 22.25 C 49.179 17.354 45.414078 13.318344 40.580078 12.277344 C 34.951078 11.064344 29.525359 13.949141 27.193359 18.744141 C 27.193359 18.744141 26.934562 19.318578 26.726562 19.892578 C 25.076563 17.046578 24.107609 14.094078 23.599609 11.955078 C 23.414609 11.175078 23.137469 9.762875 23.105469 9.671875 C 22.966469 9.268875 22.589109 9 22.162109 9 L 17 9 C 16.448 9 16 9.448 16 10 L 16 24.300781 C 16 26.649781 14.287219 28.750516 11.949219 28.978516 C 9.2672187 29.240516 7 27.13 7 24.5 L 7 10 C 7 9.448 6.552 9 6 9 L 1 9 z M 38 19 C 40.757 19 43 21.243 43 24 C 43 26.757 40.757 29 38 29 C 35.775 29 33.713531 27.658281 32.269531 26.488281 C 32.796531 24.263281 33.15025 22.773047 33.15625 22.748047 C 33.72425 20.541047 35.717 19 38 19 z" />
+              </svg>
+            </a>
+          </div>
 
-          <section class="flex flex-col gap-8">
+          <a class="flex justify-center items-center" href="assets/Mubashir_Senior_Frontend_Engineer.pdf"
+            target="_blank">
+            <button
+              class="p-2 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg hover:bg-sky-700 focus:border-sky-300 focus:outline-none">
+              Download My Resume
+            </button>
+          </a>
+
+          <div class="flex flex-col gap-3 mt-6 mx-auto text-justify">
             <p>
-              If you have an idea to discuss, a web platform to evolve or
-              anything that I can contribute to - let's
-              <a
-                href="#contact"
-                class="text-sky-600 underline font-bold"
-                rel="noopener"
-                >connect</a
-              >.
+              I convert ideas and designs into human-centric web applications
+              and developer-centric code - and I have been doing so for the
+              last
+              <span class="font-semibold text-sky-600 text-[1.1rem]">5 years</span>. I have extensive experience
+              building Modern Web Applications
+              & Experiences, Responsive Layouts, Human-Centric UIs and
+              Developer-centric Codebases using NextJS, React, Tailwind,
+              Angular 2+. I also hold hands-on knowledge and experience of
+              building NodeJS-powered backends. I am also the writer behind
+              the code
+              <a href="https://unused-css.com/blog/" class="text-sky-600 underline font-bold" rel="noopener"
+                target="_blank">blog
+              </a>
+              &nbsp;of
+              <span class="font-semibold">UnUsedCSS</span>
+              - a CSS minifier based out of London.
             </p>
-          </section>
-        </div>
-      </div>
+          </div>
+        </section>
 
-      <div
-        id="skills"
-        class="content-section hidden min-h-screen w-full md:max-w-[75%] p-4 mx-auto lg:ml-auto flex justify-center overflow-y-scroll text-justify"
-      >
-        <div
-          class="p-2 md:p-8 flex flex-col gap-4 w-full my-auto overflow-y-scroll"
-        >
-          <section class="h-fit w-full text-left mt-16 flex flex-col gap-6">
-            <p>
-              My career has been frontend-focused.During the last 6 years, I
-              have spent my days (and sometime nights):
-            </p>
-            <ul class="ml-4 list-disc">
-              <li>
-                Writing
-                <span class="font-bold">HTML, CSS, Tailwind, JavaScript</span>
-                for converting mockups into interactive screens
-              </li>
-              <li>
-                Integrating APIs and handling their state with
-                <span class="font-bold">React Query, RxJS</span>
-              </li>
-              <li>
-                Implementing logics and functionality in
-                <span class="font-bold">TypeScript</span>
-              </li>
-              <li>
-                Developing fully functional applications with
-                <span class="font-bold">React/NexTJS , Angular 2+ </span>
-              </li>
-              <li>
-                Managing UI state with
-                <span class="font-bold">React Context, Redux, NgRX</span>
-              </li>
-              <li>
-                Testing my code with
-                <span class="font-bold"> Jest, Jasmine</span>
-              </li>
-              <li>
-                Monitoring my code in production with
-                <span class="font-bold"> TrackJS, Sentry</span>
-              </li>
-              <li>
-                Tracking health of systems with
-                <span class="font-bold"> Grafana, Prometheus</span>
-              </li>
-              <li>
-                Studying how users engage with my work through
-                <span class="font-bold"> Pendo, Mixpanel </span>
-              </li>
-            </ul>
-            <p>
-              Above is what my production-grade 6 years of experience looks
-              like. In the meantime, I have also ventured into freelance
-              contributions. I have delivered Backend Proof-of-Concepts that
-              were built with:
-            </p>
-            <ul class="ml-4 list-disc">
-              <li>
-                <span class="font-bold"> NodeJS + Express </span> for Server
-                Instance, Middleware and Endpoints
-              </li>
-              <li>
-                <span class="font-bold"> MySQL</span> for structured databases
-                queried through Prisma ORM
-              </li>
-              <li>
-                <span class="font-bold"> Firebase/Firestore, MongoDB </span>
-                NoSQL databases queried through ODMs like Mongoose
-              </li>
-            </ul>
-          </section>
-          <section>
-            <p>
-              My work ideology is empathy-first - both for the users as well as
-              the teammates. I believe in delivering work that generates value
-              at the user's end, and productivity at my team's end. I prioritize
-              being a team-player who delivers not only the code, but also his
-              share towards ensuring a culture of engineering-excellence - a
-              culture that delivers peace of mind, and heart, to the ones
-              embedded in it.
-            </p>
-          </section>
-        </div>
-      </div>
-
-      <div
-        id="experience"
-        class="content-section hidden min-h-screen w-full md:max-w-[75%] px-4 py-8 mx-auto lg:ml-auto flex justify-center items-center"
-      >
-        <div
-          class="m-1 p-2 md:m-4 md:p-8 flex flex-col gap-12 h-[90%]"
-        >
-          <section class="flex flex-col gap-4">
-            <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-xl font-bold">
-                Senior Frontend Engineer at
-                <a
-                  href="https://www.linkedin.com/company/locai"
-                  class="text-sky-600 italic font-bold"
-                  target="_blank"
-                  rel="noopener"
-                  >LocAI</a
-                >
-              </h2>
-              <p>April 2024 - Present | Abu Dhabi, UAE</p>
-            </div>
-            <div class="flex gap-4">
-              <div>
-                <p>Responsible for:</p>
-                <ul class="ml-4 list-disc">
-                  <li>Developing Iqraa Dashboard with NextJS</li>
-                  <li>Implementing UI with Headless UI and TailwindCSS</li>
-                  <li>
-                    Implementing UI functionality with Typescript and React
-                  </li>
-                  <li>Integrating APIs using React Query</li>
-                  <li>Writing custom Authentication and Authorization</li>
-                  <li>Implementing State Management with Redux</li>
-                  <li>
-                    Implementing Analytics Pipeline with Rudderstack and
-                    Mixpanel
-                  </li>
-                  <li>Light and Dark Mode themes development</li>
-                  <li>Internationalization - Supporting Arabic Language</li>
-                  <li>English and Arabic Email Templates</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="text-justify flex flex-col gap-3">
-              <p>
-                At LocAI, I am serving as a Senior Software Engineer (Frontend).
-                My core responsiblity includes developing, maintaining and
-                evolving the
-                <a
-                  href="https://www.iqraa.ai/"
-                  class="text-sky-600 font-bold"
-                  target="_blank"
-                  rel="noopener"
-                  >Iqra'a</a
-                >
-                - an EdTech solution for UAE that leverages AI to automate,
-                enhance and evolve Educational System in UAE.
-              </p>
-              <p>
-                My role involves collaborating cross-functionally with Product,
-                Design, Backend and QA Teams to realize the product roadmap. I
-                joined the codebase in its birth month and was assigned the core
-                responsibilites of laying and strengthening the ground work. I
-                got to write custom authentication of the codebase, which is
-                responsibile for authentication and authorization of the user
-                session. I developed the engagement tracking pipeline using
-                custom events sent to Rudderstack, which then reverse-ETLs them
-                to Mixpanel and Google Analytics. I designed and developed the
-                architecture of communicating with Backend via React Query by
-                writing custom hooks that encapsulate repetitive operations of
-                triggering, managing state of and responding to the errors
-                generated by API invocations.
-              </p>
-              <p>
-                As the application evolved, we implemented Internationalization
-                to ensure native UAE users could use the application in Arabic.
-                I conducted the effort of centralising the application's source
-                of strings based on user's choice of language, and coordinated
-                with Translation team to extract, translate and re-inject the
-                large set of strings in an efficient manner. I also implemented
-                a light-dark mode theme switcher, to further enhance the UX.
-              </p>
-            </div>
-          </section>
-
-          <section class="flex flex-col gap-4">
-            <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-xl font-bold">
-                Senior Frontend Engineer at
-                <a
-                  href="https://www.careem.com/"
-                  class="text-sky-600 italic font-bold"
-                  target="_blank"
-                  rel="noopener"
-                  >Careem</a
-                >
-              </h2>
-              <p>August 2023 - April 2024 | Islamabad, Pakistan</p>
-            </div>
-            <div class="flex gap-4">
-              <div>
-                <ul class="ml-4 list-disc">
-                  <li>
-                    Developed Careem Bikes Admin Dashboard with NextJS and
-                    TypeScript
-                  </li>
-                  <li>Implemented UI styles with TailwindCSS</li>
-                  <li>Wrote unit tests in Jest to ensure use case coverage</li>
-                  <li>Wrote API Integration Layer with React-Query</li>
-                  <li>Implemented State Management with Context</li>
-                  <li>
-                    Implemented Observability and Monitoring with Grafana and
-                    Prometheus/PromQL
-                  </li>
-                  <li>
-                    Developed commercial email templates for launch of Careem
-                    Bikes in Saudi Arabia
-                  </li>
-                  <li>
-                    Conducted technical interviews for hiring Frontend Engineers
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="text-justify flex flex-col gap-3">
-              <p>
-                I was hired at Careem to develop the Careem Bikes Dashboard
-                in-house. I, aided by my amazing colleague Yahya from Jordan,
-                developed the dashboard using NextJS and TailwindCSS.
-              </p>
-              <p>
-                During my time, we launched Careem Bikes in Saudi Arabia. I was
-                repsonsible for the development of commercial and operations
-                email templates in Arabic. This opportunity enabled me to dive
-                deep into Right-to-Left Language email templates, and their
-                challenges.
-              </p>
-              <p>
-                Careem web services must follow standard internal practices of
-                thorough Monitoring and Observability. The responsiblity of
-                implementing this lies with the Development team. This provided
-                me with an opportunity to implement the monitoring and
-                corresponding alerts using Grafana and Prometheus.
-              </p>
-              <p>
-                Another dimension of my duties was to conduct hiring interviews
-                for potential additions to the Engineering team.
-              </p>
-            </div>
-          </section>
-
-          <section class="flex flex-col gap-4">
-            <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-xl font-bold">
-                Frontend Engineer II at
-                <a
-                  href="https://rayn.group//"
-                  class="text-sky-600 italic font-bold"
-                  target="_blank"
-                  rel="noopener"
-                  >Rayn</a
-                >
-              </h2>
-              <p>October 2022 - August 2023 | Islamabad, Pakistan</p>
-            </div>
-            <div class="flex gap-4">
-              <div>
-                <ul class="ml-4 list-disc">
-                  <li>
-                    Wrote HTML, CSS, and TypeScript in React, participating in
-                    peer code reviews and pair programming
-                  </li>
-                  <li>
-                    Developed automation tools to reduce the manual workload of
-                    GIS operations teams
-                  </li>
-                  <li>
-                    Developed an automated deck generator saving company
-                    approximately 100 hours per month
-                  </li>
-                  <li>
-                    Conducted technical interviews for hiring potential
-                    candidates, mentoring and onboarding new hires
-                  </li>
-                  <li>
-                    Designed collaboration and development processes for
-                    multiple teams to streamline development
-                  </li>
-                  <li>
-                    Drove process-enforcing for 3 teams to increase productivity
-                    by 40% to 50% and reduce backlog
-                  </li>
-                  <li>
-                    Led development on a setup portal to reduce 40% of setup
-                    time for the ops team
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="text-justify flex flex-col gap-3">
-              <p>
-                My main reason to depart from Motive and join Rayn was to pull
-                myself out of the comfort zone. Motive had set processes, that
-                were architected and perfected long before I had joined Motive.
-                After having spent more than 2 years in Motive, I had realized
-                my growth and learning curve had flattened out. After discussing
-                with my mentor, I took the decision and decided to join a much
-                more challenging opportunity.
-              </p>
-
-              <p>
-                I was hired at Rayn as the first frontend developer for
-                <a
-                  href="https://www.endpolio.com.pk"
-                  target="_blank"
-                  rel="noopener"
-                  class="text-sky-600 font-bold"
-                  >Pakistan Polio Eradication Programme</a
-                >
-                - the national Web Dashboard for live and legacy management of
-                national polio campaigns. The foremost challenge that I
-                encountered was a messy codebase written on need-basis by
-                backend developers - that ran into bugs and breakdowns
-                regularly. It was evident that the code won't scale, but it was
-                essential to keep it running for mission-critical requirements
-                as well. I kept the lights on, hoping for a downtime to come my
-                way to solve the root cause. That break did come, in Ramdan of
-                2023 wherein no polio campaigns were scheduled. I took that
-                month long opportunity to tear down the codebase and re-write it
-                from the root-level. The resultant code was much more
-                self-explanatory, readable and scaleable. The bug and breakages
-                count saw its lowest. I consider it as one of my major
-                achievements in my career so far.
-              </p>
-              <p>
-                At Rayn, I was also tasked with designing, implementing and
-                streamlining dev processes - across Design, Frontend, Backend
-                and QA.
-              </p>
-            </div>
-          </section>
-
-          <section class="flex flex-col gap-4">
-            <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-xl font-bold">
-                L4 Frontend Engineer
-                <a
-                  href="https://gomotive.com/"
-                  class="text-sky-600 italic font-bold"
-                  target="_blank"
-                  rel="noopener"
-                  >Motive</a
-                >
-              </h2>
-              <p>July 2020 - October 2022 | Islamabad, Pakistan</p>
-            </div>
-            <div class="flex gap-4">
-              <div>
-                <ul class="ml-4 list-disc">
-                  <li>
-                    Wrote TypeScript, and RxJS in Angular 2+, Ant Design, and
-                    Unit Tests for an enterprise application
-                  </li>
-                  <li>
-                    Served as frontend on-call engineer every quarter for
-                    monitoring of production, hot-fixing 2 production
-                    escalations, authoring 1 blameless post-mortem report
-                  </li>
-                  <li>
-                    Implemented instrumentation solutions for analyzing 100% of
-                    possible user interactions with a business-critical workflow
-                    using Pendo and Mixpanel
-                  </li>
-                  <li>
-                    Implemented an internal tool for training 100s of data
-                    annotators
-                  </li>
-                  <li>
-                    Led conversion of a major legacy workflow into a
-                    mobile-friendly responsive implementation
-                  </li>
-                  <li>
-                    Conducted technical interviews, knowledge sharing sessions,
-                    and authored technical design documents
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="text-justify flex flex-col gap-3">
-              <p>
-                I can not be grateful enough for the opportunity to have worked
-                at Motive. Motive enabled me at multiple fronts. I got to
-                witness and experience how scale works. I wrote code, not only
-                to deliver features, but also to understand and gauge how my
-                code is being utilized.
-              </p>
-              <p>
-                I spent most of the time in writing UI and integration layers,
-                engaging heavily in peer reviews, authoring Technical Design
-                Documents, delivering Knowledge Talks and conducting hiring
-                interviews. I was also a part of the on-call rotation, and were
-                part of 1 Production Fire-fighting session and authoring of a
-                post-mortem report.
-              </p>
-              <p>
-                Apart from core development work, I got to build a User
-                Instrumentation pipeline using a combination of Pendo, Snowflake
-                and Redis. We tracked user engagement using off-the-shelf and
-                custom Pendo events. The said data was then queried with Redis
-                to build engagement-specific dashboards. Working on this feature
-                made me the go-to for anything tracking and I continued
-                maintaining and evolving the tracking till the last day.
-              </p>
-            </div>
-          </section>
-
-          <section class="flex flex-col gap-4">
-            <div class="flex flex-col gap-1">
-              <h2 class="text-lg lg:text-xl font-bold">
-                Frontend Engineer
-                <a
-                  href="https://www.xgrid.co/"
-                  class="text-sky-600 italic font-bold"
-                  target="_blank"
-                  rel="noopener"
-                  >Xgrid</a
-                >
-              </h2>
-              <p>June 2019 - June 2020 | Islamabad, Pakistan</p>
-            </div>
-            <div class="flex gap-4">
-              <div>
-                <ul class="ml-4 list-disc">
-                  <li>
-                    Developed Angular 2+ powered dashboard with Material UI
-                  </li>
-                  <li>Wrote API Integration and Management layer with RxJS</li>
-                  <li>
-                    Implemented real time data communication with Web Sockets
-                  </li>
-                  <li>Implemented state management with NgRX</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="text-justify flex flex-col gap-3">
-              <p>
-                Xgrid was my first workplace, my first job. I was
-                super-fortunate with a first job that came with challenging work
-                and great leaders who led with code and example. I met my mentor
-                in the same workplace and I take their advice till date.
-              </p>
-              <p>
-                I was assigned to the most challenging product/codebase that the
-                company was working on -
-                <a
-                  href="https://www.fibermountain.com/products/apd-starling"
-                  class="text-sky-600 italic font-bold"
-                  target="_blank"
-                  rel="noopener"
-                  >Fiber Mountain</a
-                >. It was an Angular 2+ dashboard that virtualized an entire
-                data center and communicated with it 2-way in real time.
-              </p>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <div
-        id="hireMe"
-        class="content-section hidden min-h-screen w-full sm:max-w-[75%] px-4 mx-auto lg:ml-auto flex justify-center items-center"
-      >
-        <div
-          class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full px-4 mx-auto my-autp backdrop-blur h-[90%]"
-        >
-          <section class="h-fit w-full text-left mt-16">
-            We can collaborate, if you need someone to:
-            <ul class="ml-6 mt-4 list-disc flex flex-col gap-2">
-              <li>convert designs into a functional web app</li>
-              <li>consult with to improve or evolve your app</li>
-              <li>realize your passionate idea into an app</li>
-              <li>maintain and grow your side-hustle project</li>
-              <li>
-                build a high-peforming team of web developers for your company
-              </li>
-              <li>author a technical document about web</li>
-            </ul>
-            <p class="mt-8">
-              If you are any one of the above, you can get in touch with me via
-              my
-              <a
-                href="https://www.linkedin.com/in/muhammad-mubashir-irfan/"
-                class="text-sky-600 font-bold"
-                target="_blank"
-                rel="noopener"
-              >
-                LinkedIn</a
-              >
-              or
-              <a
-                href="https://www.upwork.com/freelancers/~0130ded4b0a288246d"
-                class="text-sky-600 font-bold"
-                target="_blank"
-                rel="noopener"
-              >
-                Upwork</a
-              >.
-            </p>
-            <p>
-              You can also drop an email at
-              <span class="italic">mubashir.irfan37@gmail.com</span>.
-            </p>
-          </section>
-        </div>
-      </div>
-
-      <div
-        id="contact"
-        class="content-section hidden min-h-screen w-full sm:max-w-[75%] px-4 mx-auto lg:ml-auto flex justify-center items-center"
-      >
-        <div
-          class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full mx-auto px-4 mx-auto my-autp backdrop-blur h-[90%]"
-        >
-          <section class="h-fit w-full text-left mt-16">
-            <div class="flex flex-col gap-8">
-              <p>
-                You can drop me an instant message using the following form:
-              </p>
-              <div class="w-full max-w-[700px] mx-auto my-auto">
-                <form
-                  class="flex flex-col gap-4"
-                  action="https://formspree.io/f/mzzzpqrj"
-                  method="POST"
-                >
-                  <input
-                    title="Email Address"
-                    placeholder="Enter your email address here"
-                    class="border border-sky-600 bg-transparent focus:border-sky-300 focus:outline-none p-4 text-lg rounded-md"
-                    type="email"
-                    name="email"
-                  />
-                  <textarea
-                    title="Your Message"
-                    placeholder="Enter your message here"
-                    class="border border-sky-600 bg-transparent focus:border-sky-300 focus:outline-none p-4 text-lg rounded-md"
-                    rows="7"
-                    name="message"
-                  ></textarea>
-                  <button
-                    type="submit"
-                    class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg text-[1.1rem] hover:bg-sky-700 focus:outline-none focus:border-sky-300"
-                  >
-                    Send
-                  </button>
-                </form>
-              </div>
-              <p class="md:text-base">
-                I understand blackbox messages don't tend to be very assuring.
-                If you need to be 100% sure that your message has reached me,
-                you can get in touch via
-                <a
-                  href="https://www.linkedin.com/in/muhammad-mubashir-irfan/"
-                  class="text-sky-600 font-bold"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  LinkedIn</a
-                >.
-              </p>
-            </div>
-          </section>
-        </div>
+        <section class="flex flex-col gap-8">
+          <p>
+            If you have an idea to discuss, a web platform to evolve or
+            anything that I can contribute to - let's
+            <a href="#contact" class="text-sky-600 underline font-bold" rel="noopener">connect</a>.
+          </p>
+        </section>
       </div>
     </div>
-  </body>
+
+    <div id="skills"
+      class="content-section hidden min-h-screen w-full md:max-w-[75%] p-4 mx-auto lg:ml-auto flex justify-center overflow-y-scroll text-justify">
+      <div class="p-2 md:p-8 flex flex-col gap-4 w-full my-auto overflow-y-scroll">
+        <section class="h-fit w-full text-left mt-16 flex flex-col gap-6">
+          <p>
+            My career has been frontend-focused.During the last 6 years, I
+            have spent my days (and sometime nights):
+          </p>
+          <ul class="ml-4 list-disc">
+            <li>
+              Writing
+              <span class="font-bold">HTML, CSS, Tailwind, JavaScript</span>
+              for converting mockups into interactive screens
+            </li>
+            <li>
+              Integrating APIs and handling their state with
+              <span class="font-bold">React Query, RxJS</span>
+            </li>
+            <li>
+              Implementing logics and functionality in
+              <span class="font-bold">TypeScript</span>
+            </li>
+            <li>
+              Developing fully functional applications with
+              <span class="font-bold">React/NexTJS , Angular 2+ </span>
+            </li>
+            <li>
+              Managing UI state with
+              <span class="font-bold">React Context, Redux, NgRX</span>
+            </li>
+            <li>
+              Testing my code with
+              <span class="font-bold"> Jest, Jasmine</span>
+            </li>
+            <li>
+              Monitoring my code in production with
+              <span class="font-bold"> TrackJS, Sentry</span>
+            </li>
+            <li>
+              Tracking health of systems with
+              <span class="font-bold"> Grafana, Prometheus</span>
+            </li>
+            <li>
+              Studying how users engage with my work through
+              <span class="font-bold"> Pendo, Mixpanel </span>
+            </li>
+          </ul>
+          <p>
+            Above is what my production-grade 6 years of experience looks
+            like. In the meantime, I have also ventured into freelance
+            contributions. I have delivered Backend Proof-of-Concepts that
+            were built with:
+          </p>
+          <ul class="ml-4 list-disc">
+            <li>
+              <span class="font-bold"> NodeJS + Express </span> for Server
+              Instance, Middleware and Endpoints
+            </li>
+            <li>
+              <span class="font-bold"> MySQL</span> for structured databases
+              queried through Prisma ORM
+            </li>
+            <li>
+              <span class="font-bold"> Firebase/Firestore, MongoDB </span>
+              NoSQL databases queried through ODMs like Mongoose
+            </li>
+          </ul>
+        </section>
+        <section>
+          <p>
+            My work ideology is empathy-first - both for the users as well as
+            the teammates. I believe in delivering work that generates value
+            at the user's end, and productivity at my team's end. I prioritize
+            being a team-player who delivers not only the code, but also his
+            share towards ensuring a culture of engineering-excellence - a
+            culture that delivers peace of mind, and heart, to the ones
+            embedded in it.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div id="experience"
+      class="content-section hidden min-h-screen w-full md:max-w-[75%] px-4 py-8 mx-auto lg:ml-auto flex justify-center items-center">
+      <div class="m-1 p-2 md:m-4 md:p-8 flex flex-col gap-12 h-[90%]">
+        <section class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <h2 class="text-lg lg:text-xl font-bold">
+              Senior Frontend Engineer at
+              <a href="https://www.linkedin.com/company/locai" class="text-sky-600 italic font-bold" target="_blank"
+                rel="noopener">LocAI</a>
+            </h2>
+            <p>April 2024 - Present | Abu Dhabi, UAE</p>
+          </div>
+          <div class="flex gap-4">
+            <div>
+              <p>Responsible for:</p>
+              <ul class="ml-4 list-disc">
+                <li>Developing Iqraa Dashboard with NextJS</li>
+                <li>Implementing UI with Headless UI and TailwindCSS</li>
+                <li>
+                  Implementing UI functionality with Typescript and React
+                </li>
+                <li>Integrating APIs using React Query</li>
+                <li>Writing custom Authentication and Authorization</li>
+                <li>Implementing State Management with Redux</li>
+                <li>
+                  Implementing Analytics Pipeline with Rudderstack and
+                  Mixpanel
+                </li>
+                <li>Light and Dark Mode themes development</li>
+                <li>Internationalization - Supporting Arabic Language</li>
+                <li>English and Arabic Email Templates</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-justify flex flex-col gap-3">
+            <p>
+              At LocAI, I am serving as a Senior Software Engineer (Frontend).
+              My core responsiblity includes developing, maintaining and
+              evolving the
+              <a href="https://www.iqraa.ai/" class="text-sky-600 font-bold" target="_blank" rel="noopener">Iqra'a</a>
+              - an EdTech solution for UAE that leverages AI to automate,
+              enhance and evolve Educational System in UAE.
+            </p>
+            <p>
+              My role involves collaborating cross-functionally with Product,
+              Design, Backend and QA Teams to realize the product roadmap. I
+              joined the codebase in its birth month and was assigned the core
+              responsibilites of laying and strengthening the ground work. I
+              got to write custom authentication of the codebase, which is
+              responsibile for authentication and authorization of the user
+              session. I developed the engagement tracking pipeline using
+              custom events sent to Rudderstack, which then reverse-ETLs them
+              to Mixpanel and Google Analytics. I designed and developed the
+              architecture of communicating with Backend via React Query by
+              writing custom hooks that encapsulate repetitive operations of
+              triggering, managing state of and responding to the errors
+              generated by API invocations.
+            </p>
+            <p>
+              As the application evolved, we implemented Internationalization
+              to ensure native UAE users could use the application in Arabic.
+              I conducted the effort of centralising the application's source
+              of strings based on user's choice of language, and coordinated
+              with Translation team to extract, translate and re-inject the
+              large set of strings in an efficient manner. I also implemented
+              a light-dark mode theme switcher, to further enhance the UX.
+            </p>
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <h2 class="text-lg lg:text-xl font-bold">
+              Senior Frontend Engineer at
+              <a href="https://www.careem.com/" class="text-sky-600 italic font-bold" target="_blank"
+                rel="noopener">Careem</a>
+            </h2>
+            <p>Feb 2023 - April 2024 | Islamabad, Pakistan</p>
+          </div>
+          <div class="flex gap-4">
+            <div>
+              <ul class="ml-4 list-disc">
+                <li>
+                  Developed Careem Bikes Admin Dashboard with NextJS and
+                  TypeScript
+                </li>
+                <li>Implemented UI styles with TailwindCSS</li>
+                <li>Wrote unit tests in Jest to ensure use case coverage</li>
+                <li>Wrote API Integration Layer with React-Query</li>
+                <li>Implemented State Management with Context</li>
+                <li>
+                  Implemented Observability and Monitoring with Grafana and
+                  Prometheus/PromQL
+                </li>
+                <li>
+                  Developed commercial email templates for launch of Careem
+                  Bikes in Saudi Arabia
+                </li>
+                <li>
+                  Conducted technical interviews for hiring Frontend Engineers
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-justify flex flex-col gap-3">
+            <p>
+              I was hired at Careem to develop the Careem Bikes Dashboard
+              in-house. I, aided by my amazing colleague Yahya from Jordan,
+              developed the dashboard using NextJS and TailwindCSS.
+            </p>
+            <p>
+              During my time, we launched Careem Bikes in Saudi Arabia. I was
+              repsonsible for the development of commercial and operations
+              email templates in Arabic. This opportunity enabled me to dive
+              deep into Right-to-Left Language email templates, and their
+              challenges.
+            </p>
+            <p>
+              Careem web services must follow standard internal practices of
+              thorough Monitoring and Observability. The responsiblity of
+              implementing this lies with the Development team. This provided
+              me with an opportunity to implement the monitoring and
+              corresponding alerts using Grafana and Prometheus.
+            </p>
+            <p>
+              Another dimension of my duties was to conduct hiring interviews
+              for potential additions to the Engineering team.
+            </p>
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <h2 class="text-lg lg:text-xl font-bold">
+              Frontend Engineer II at
+              <a href="https://rayn.group//" class="text-sky-600 italic font-bold" target="_blank"
+                rel="noopener">Rayn</a>
+            </h2>
+            <p>Jan 2022 - Feb 2023 | Islamabad, Pakistan</p>
+          </div>
+          <div class="flex gap-4">
+            <div>
+              <ul class="ml-4 list-disc">
+                <li>
+                  Wrote HTML, CSS, and TypeScript in React, participating in
+                  peer code reviews and pair programming
+                </li>
+                <li>
+                  Developed automation tools to reduce the manual workload of
+                  GIS operations teams
+                </li>
+                <li>
+                  Developed an automated deck generator saving company
+                  approximately 100 hours per month
+                </li>
+                <li>
+                  Conducted technical interviews for hiring potential
+                  candidates, mentoring and onboarding new hires
+                </li>
+                <li>
+                  Designed collaboration and development processes for
+                  multiple teams to streamline development
+                </li>
+                <li>
+                  Drove process-enforcing for 3 teams to increase productivity
+                  by 40% to 50% and reduce backlog
+                </li>
+                <li>
+                  Led development on a setup portal to reduce 40% of setup
+                  time for the ops team
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-justify flex flex-col gap-3">
+            <p>
+              My main reason to depart from Motive and join Rayn was to pull
+              myself out of the comfort zone. Motive had set processes, that
+              were architected and perfected long before I had joined Motive.
+              After having spent more than 2 years in Motive, I had realized
+              my growth and learning curve had flattened out. After discussing
+              with my mentor, I took the decision and decided to join a much
+              more challenging opportunity.
+            </p>
+
+            <p>
+              I was hired at Rayn as the first frontend developer for
+              <a href="https://www.endpolio.com.pk" target="_blank" rel="noopener"
+                class="text-sky-600 font-bold">Pakistan Polio Eradication Programme</a>
+              - the national Web Dashboard for live and legacy management of
+              national polio campaigns. The foremost challenge that I
+              encountered was a messy codebase written on need-basis by
+              backend developers - that ran into bugs and breakdowns
+              regularly. It was evident that the code won't scale, but it was
+              essential to keep it running for mission-critical requirements
+              as well. I kept the lights on, hoping for a downtime to come my
+              way to solve the root cause. That break did come, in Ramdan of
+              2023 wherein no polio campaigns were scheduled. I took that
+              month long opportunity to tear down the codebase and re-write it
+              from the root-level. The resultant code was much more
+              self-explanatory, readable and scaleable. The bug and breakages
+              count saw its lowest. I consider it as one of my major
+              achievements in my career so far.
+            </p>
+            <p>
+              At Rayn, I was also tasked with designing, implementing and
+              streamlining dev processes - across Design, Frontend, Backend
+              and QA.
+            </p>
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <h2 class="text-lg lg:text-xl font-bold">
+              L4 Frontend Engineer
+              <a href="https://gomotive.com/" class="text-sky-600 italic font-bold" target="_blank"
+                rel="noopener">Motive</a>
+            </h2>
+            <p>Feb 2020 - Jan 2022 | Islamabad, Pakistan</p>
+          </div>
+          <div class="flex gap-4">
+            <div>
+              <ul class="ml-4 list-disc">
+                <li>
+                  Wrote TypeScript, and RxJS in Angular 2+, Ant Design, and
+                  Unit Tests for an enterprise application
+                </li>
+                <li>
+                  Served as frontend on-call engineer every quarter for
+                  monitoring of production, hot-fixing 2 production
+                  escalations, authoring 1 blameless post-mortem report
+                </li>
+                <li>
+                  Implemented instrumentation solutions for analyzing 100% of
+                  possible user interactions with a business-critical workflow
+                  using Pendo and Mixpanel
+                </li>
+                <li>
+                  Implemented an internal tool for training 100s of data
+                  annotators
+                </li>
+                <li>
+                  Led conversion of a major legacy workflow into a
+                  mobile-friendly responsive implementation
+                </li>
+                <li>
+                  Conducted technical interviews, knowledge sharing sessions,
+                  and authored technical design documents
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-justify flex flex-col gap-3">
+            <p>
+              I can not be grateful enough for the opportunity to have worked
+              at Motive. Motive enabled me at multiple fronts. I got to
+              witness and experience how scale works. I wrote code, not only
+              to deliver features, but also to understand and gauge how my
+              code is being utilized.
+            </p>
+            <p>
+              I spent most of the time in writing UI and integration layers,
+              engaging heavily in peer reviews, authoring Technical Design
+              Documents, delivering Knowledge Talks and conducting hiring
+              interviews. I was also a part of the on-call rotation, and were
+              part of 1 Production Fire-fighting session and authoring of a
+              post-mortem report.
+            </p>
+            <p>
+              Apart from core development work, I got to build a User
+              Instrumentation pipeline using a combination of Pendo, Snowflake
+              and Redis. We tracked user engagement using off-the-shelf and
+              custom Pendo events. The said data was then queried with Redis
+              to build engagement-specific dashboards. Working on this feature
+              made me the go-to for anything tracking and I continued
+              maintaining and evolving the tracking till the last day.
+            </p>
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <h2 class="text-lg lg:text-xl font-bold">
+              Frontend Engineer
+              <a href="https://www.xgrid.co/" class="text-sky-600 italic font-bold" target="_blank"
+                rel="noopener">Xgrid</a>
+            </h2>
+            <p>Jun 2019 - Feb 2020 | Islamabad, Pakistan</p>
+          </div>
+          <div class="flex gap-4">
+            <div>
+              <ul class="ml-4 list-disc">
+                <li>
+                  Developed Angular 2+ powered dashboard with Material UI
+                </li>
+                <li>Wrote API Integration and Management layer with RxJS</li>
+                <li>
+                  Implemented real time data communication with Web Sockets
+                </li>
+                <li>Implemented state management with NgRX</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-justify flex flex-col gap-3">
+            <p>
+              Xgrid was my first workplace, my first job. I was
+              super-fortunate with a first job that came with challenging work
+              and great leaders who led with code and example. I met my mentor
+              in the same workplace and I take their advice till date.
+            </p>
+            <p>
+              I was assigned to the most challenging product/codebase that the
+              company was working on -
+              <a href="https://www.fibermountain.com/products/apd-starling" class="text-sky-600 italic font-bold"
+                target="_blank" rel="noopener">Fiber Mountain</a>. It was an Angular 2+ dashboard that virtualized an
+              entire
+              data center and communicated with it 2-way in real time.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="hireMe"
+      class="content-section hidden min-h-screen w-full sm:max-w-[75%] px-4 mx-auto lg:ml-auto flex justify-center items-center">
+      <div
+        class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full px-4 mx-auto my-autp backdrop-blur h-[90%]">
+        <section class="h-fit w-full text-left mt-16">
+          We can collaborate, if you need someone to:
+          <ul class="ml-6 mt-4 list-disc flex flex-col gap-2">
+            <li>convert designs into a functional web app</li>
+            <li>consult with to improve or evolve your app</li>
+            <li>realize your passionate idea into an app</li>
+            <li>maintain and grow your side-hustle project</li>
+            <li>
+              build a high-peforming team of web developers for your company
+            </li>
+            <li>author a technical document about web</li>
+          </ul>
+          <p class="mt-8">
+            If you are any one of the above, you can get in touch with me via
+            my
+            <a href="https://www.linkedin.com/in/muhammad-mubashir-irfan/" class="text-sky-600 font-bold"
+              target="_blank" rel="noopener">
+              LinkedIn</a>
+            or
+            <a href="https://www.upwork.com/freelancers/~0130ded4b0a288246d" class="text-sky-600 font-bold"
+              target="_blank" rel="noopener">
+              Upwork</a>.
+          </p>
+          <p>
+            You can also drop an email at
+            <span class="italic">mubashir.irfan37@gmail.com</span>.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div id="contact"
+      class="content-section hidden min-h-screen w-full sm:max-w-[75%] px-4 mx-auto lg:ml-auto flex justify-center items-center">
+      <div
+        class="m-4 p-4 flex flex-col justify-center gap-12 overflow-y-scroll w-full mx-auto px-4 mx-auto my-autp backdrop-blur h-[90%]">
+        <section class="h-fit w-full text-left mt-16">
+          <div class="flex flex-col gap-8">
+            <p>
+              You can drop me an instant message using the following form:
+            </p>
+            <div class="w-full max-w-[700px] mx-auto my-auto">
+              <form class="flex flex-col gap-4" action="https://formspree.io/f/mzzzpqrj" method="POST">
+                <input title="Email Address" placeholder="Enter your email address here"
+                  class="border border-sky-600 bg-transparent focus:border-sky-300 focus:outline-none p-4 text-lg rounded-md"
+                  type="email" name="email" />
+                <textarea title="Your Message" placeholder="Enter your message here"
+                  class="border border-sky-600 bg-transparent focus:border-sky-300 focus:outline-none p-4 text-lg rounded-md"
+                  rows="7" name="message"></textarea>
+                <button type="submit"
+                  class="p-4 bg-transparent drop-shadow-lg border border-sky-600 drop-shadow-lg text-[1.1rem] hover:bg-sky-700 focus:outline-none focus:border-sky-300">
+                  Send
+                </button>
+              </form>
+            </div>
+            <p class="md:text-base">
+              I understand blackbox messages don't tend to be very assuring.
+              If you need to be 100% sure that your message has reached me,
+              you can get in touch via
+              <a href="https://www.linkedin.com/in/muhammad-mubashir-irfan/" class="text-sky-600 font-bold"
+                target="_blank" rel="noopener">
+                LinkedIn</a>.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
